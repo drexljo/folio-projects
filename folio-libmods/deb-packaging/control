@@ -1,0 +1,15 @@
+Source: folio-libmods
+Maintainer: Jo Drexl <johannes.drexl@lrz.de>
+Section: net
+Priority: extra
+Build-Depends: debhelper (>= 10.2.5~)
+Standards-Version: 3.9.8
+Homepage: https://github.com/folio-org/mod-authtoken
+
+Package: folio-libmods
+Architecture: all
+Depends: ${misc:Depends}, ${misc:Pre-Depends}, ${shlibs:Depends}, postgresql-client, curl, whiptail (>= 0.52.18~), bash (>= 4.3~) 
+Suggests: postgresql
+Description: FOLIO library for modules
+ Contains libraries and scripts to ease installation and administration of folio
+ modules

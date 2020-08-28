@@ -1,0 +1,5 @@
+folio-mod-test (4.1.0-1) UNRELEASED; urgency=low (private test build)
+  
+  * Test for debian installer components
+
+ -- Jo Drexl <johannes.drexl@lrz.de>  Wed, 26 May 2020 12:53:55 +0200

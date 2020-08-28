@@ -1,0 +1,25 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = purge ]
+  then
+    # Remove config directory
+    rm -rf /etc/folio/okapi
+    # Remove config parent directory
+    [ -d /etc/folio ] && rmdir --ignore-fail-on-non-empty /etc/folio || true
+
+    # Delete log directory
+    rm -rf /var/log/folio/okapi
+    [ -d /var/log/folio ] && rmdir --ignore-fail-on-non-empty /var/log/folio || true
+
+    # Delete user home directory
+    rm -rf /var/lib/folio/okapi
+    [ -d /var/lib/folio ] && rmdir --ignore-fail-on-non-empty /var/lib/folio || true
+
+    # Delete user
+    deluser folio-okapi || true
+fi
+ 
+#DEBHELPER#
+
+exit 0

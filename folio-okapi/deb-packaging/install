@@ -1,0 +1,6 @@
+etc/folio/okapi/hazelcast.xml etc/folio/okapi
+etc/folio/okapi/log4j2.properties etc/folio/okapi
+etc/logrotate.d/folio-okapi etc/logrotate.d
+lib/systemd/system/folio-okapi.service lib/systemd/system
+usr/share/doc/folio/okapi usr/share/doc/folio
+usr/share/folio/okapi usr/share/folio

@@ -1,3 +1,3 @@
-# folio-buildsources
+# genesis-projects
 
-Planned to make public
+Harbors all files necessary for Bob the Builder to build packages.
