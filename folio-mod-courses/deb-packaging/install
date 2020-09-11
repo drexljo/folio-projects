@@ -1,0 +1,3 @@
+etc/folio/mod-courses/module.env etc/folio/mod-courses
+lib/systemd/system/folio-mod-courses@.service lib/systemd/system
+usr/share/folio/mod-courses usr/share/folio

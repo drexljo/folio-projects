@@ -1,0 +1,3 @@
+etc/folio/mod-kb-ebsco-java/module.env etc/folio/mod-kb-ebsco-java
+lib/systemd/system/folio-mod-kb-ebsco-java@.service lib/systemd/system
+usr/share/folio/mod-kb-ebsco-java usr/share/folio

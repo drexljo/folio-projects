@@ -1,0 +1,3 @@
+etc/folio/mod-agreements/module.env etc/folio/mod-agreements
+lib/systemd/system/folio-mod-agreements@.service lib/systemd/system
+usr/share/folio/mod-agreements usr/share/folio

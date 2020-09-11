@@ -1,0 +1,698 @@
+{
+  "id": "mod-inventory-16.1.0-SNAPSHOT",
+  "name": "Inventory Module",
+  "provides": [
+    {
+      "id": "inventory",
+      "version": "10.6",
+      "handlers": [
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/inventory/items",
+          "permissionsRequired": [
+            "inventory.items.collection.get"
+          ],
+          "modulePermissions": [
+            "inventory-storage.items.collection.get",
+            "inventory-storage.material-types.item.get",
+            "inventory-storage.material-types.collection.get",
+            "inventory-storage.loan-types.item.get",
+            "inventory-storage.loan-types.collection.get",
+            "inventory-storage.locations.item.get",
+            "inventory-storage.locations.collection.get",
+            "inventory-storage.holdings.collection.get",
+            "inventory-storage.holdings.item.get",
+            "inventory-storage.instances.collection.get",
+            "inventory-storage.instances.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/inventory/items/{id}",
+          "permissionsRequired": [
+            "inventory.items.item.get"
+          ],
+          "modulePermissions": [
+            "inventory-storage.items.item.get",
+            "inventory-storage.material-types.item.get",
+            "inventory-storage.material-types.collection.get",
+            "inventory-storage.loan-types.item.get",
+            "inventory-storage.loan-types.collection.get",
+            "inventory-storage.locations.item.get",
+            "inventory-storage.locations.collection.get",
+            "inventory-storage.holdings.collection.get",
+            "inventory-storage.holdings.item.get",
+            "inventory-storage.instances.collection.get",
+            "inventory-storage.instances.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/inventory/items/{id}/mark-withdrawn",
+          "permissionsRequired": [
+            "inventory.items.item.mark-withdrawn.post"
+          ],
+          "modulePermissions": [
+            "circulation-storage.requests.collection.get",
+            "circulation-storage.requests.item.put",
+            "inventory-storage.items.item.put",
+            "inventory-storage.material-types.item.get",
+            "inventory-storage.material-types.collection.get",
+            "inventory-storage.loan-types.item.get",
+            "inventory-storage.loan-types.collection.get",
+            "inventory-storage.locations.item.get",
+            "inventory-storage.locations.collection.get",
+            "inventory-storage.holdings.collection.get",
+            "inventory-storage.holdings.item.get",
+            "inventory-storage.instances.collection.get",
+            "inventory-storage.instances.item.get",
+            "users.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/inventory/items/{id}/mark-missing",
+          "permissionsRequired": [
+            "inventory.items.item.mark-missing.post"
+          ],
+          "modulePermissions": [
+            "circulation-storage.requests.collection.get",
+            "circulation-storage.requests.item.put",
+            "inventory-storage.items.item.put",
+            "inventory-storage.material-types.item.get",
+            "inventory-storage.material-types.collection.get",
+            "inventory-storage.loan-types.item.get",
+            "inventory-storage.loan-types.collection.get",
+            "inventory-storage.locations.item.get",
+            "inventory-storage.locations.collection.get",
+            "inventory-storage.holdings.collection.get",
+            "inventory-storage.holdings.item.get",
+            "inventory-storage.instances.collection.get",
+            "inventory-storage.instances.item.get",
+            "users.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/inventory/items",
+          "permissionsRequired": [
+            "inventory.items.item.post"
+          ],
+          "modulePermissions": [
+            "inventory-storage.items.item.post",
+            "inventory-storage.material-types.item.get",
+            "inventory-storage.material-types.collection.get",
+            "inventory-storage.loan-types.item.get",
+            "inventory-storage.loan-types.collection.get",
+            "inventory-storage.locations.item.get",
+            "inventory-storage.locations.collection.get",
+            "inventory-storage.holdings.collection.get",
+            "inventory-storage.holdings.item.get",
+            "inventory-storage.instances.collection.get",
+            "inventory-storage.instances.item.get",
+            "users.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/inventory/items/{id}",
+          "permissionsRequired": [
+            "inventory.items.item.put"
+          ],
+          "modulePermissions": [
+            "inventory-storage.items.item.put",
+            "users.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/inventory/items/{id}",
+          "permissionsRequired": [
+            "inventory.items.item.delete"
+          ],
+          "modulePermissions": [
+            "inventory-storage.items.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/inventory/items",
+          "permissionsRequired": [
+            "inventory.items.collection.delete"
+          ],
+          "modulePermissions": [
+            "inventory-storage.items.collection.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/inventory/instances",
+          "permissionsRequired": [
+            "inventory.instances.collection.get"
+          ],
+          "modulePermissions": [
+            "inventory-storage.instances.collection.get",
+            "inventory-storage.instances.item.get",
+            "inventory-storage.preceding-succeeding-titles.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/inventory/instances/{id}",
+          "permissionsRequired": [
+            "inventory.instances.item.get"
+          ],
+          "modulePermissions": [
+            "inventory-storage.instances.item.get",
+            "inventory-storage.preceding-succeeding-titles.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/inventory/instances",
+          "permissionsRequired": [
+            "inventory.instances.item.post"
+          ],
+          "modulePermissions": [
+            "inventory-storage.instances.item.post",
+            "inventory-storage.instances.item.get",
+            "inventory-storage.preceding-succeeding-titles.collection.get",
+            "inventory-storage.preceding-succeeding-titles.item.post",
+            "inventory-storage.preceding-succeeding-titles.item.put",
+            "inventory-storage.preceding-succeeding-titles.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/inventory/instances/{id}",
+          "permissionsRequired": [
+            "inventory.instances.item.put"
+          ],
+          "modulePermissions": [
+            "inventory-storage.instances.item.put",
+            "inventory-storage.instances.item.get",
+            "inventory-storage.instances.item.post",
+            "inventory-storage.instances.item.delete",
+            "source-storage.records.update",
+            "inventory-storage.preceding-succeeding-titles.collection.get",
+            "inventory-storage.preceding-succeeding-titles.item.post",
+            "inventory-storage.preceding-succeeding-titles.item.put",
+            "inventory-storage.preceding-succeeding-titles.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/inventory/instances/{id}",
+          "permissionsRequired": [
+            "inventory.instances.item.delete"
+          ],
+          "modulePermissions": [
+            "inventory-storage.instances.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/inventory/instances",
+          "permissionsRequired": [
+            "inventory.instances.collection.delete"
+          ],
+          "modulePermissions": [
+            "inventory-storage.instances.collection.delete"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/inventory/ingest/mods",
+          "permissionsRequired": [
+            "inventory.ingest.mods.post"
+          ],
+          "modulePermissions": [
+            "inventory-storage.items.item.post",
+            "inventory-storage.instances.item.post",
+            "inventory-storage.instances.collection.get",
+            "inventory-storage.holdings.item.post",
+            "inventory-storage.holdings.collection.get",
+            "inventory-storage.material-types.collection.get",
+            "inventory-storage.loan-types.collection.get",
+            "inventory-storage.locations.collection.get",
+            "inventory-storage.instance-types.collection.get",
+            "inventory-storage.identifier-types.collection.get",
+            "inventory-storage.contributor-name-types.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/inventory/ingest/mods/status/{id}",
+          "permissionsRequired": [
+            "inventory.ingest.mods.status.get"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inventory-batch",
+      "version": "0.5",
+      "handlers": [
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/inventory/instances/batch",
+          "permissionsRequired": [
+            "inventory.instances.batch.post"
+          ],
+          "modulePermissions": [
+            "inventory-storage.instances.item.post",
+            "inventory-storage.instances.item.get",
+            "inventory-storage.instances.item.put",
+            "inventory-storage.instances.item.delete",
+            "inventory-storage.instances.batch.post",
+            "inventory-storage.preceding-succeeding-titles.collection.get",
+            "inventory-storage.preceding-succeeding-titles.item.post",
+            "inventory-storage.preceding-succeeding-titles.item.put",
+            "inventory-storage.preceding-succeeding-titles.item.delete"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inventory-config",
+      "version": "0.1",
+      "handlers": [
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/inventory/config/instances/blocked-fields",
+          "permissionsRequired": [
+            "inventory.config.instances.blocked-fields.get"
+          ],
+          "modulePermissions": []
+        }
+      ]
+    },
+    {
+      "id": "isbn-utils",
+      "version": "2.0",
+      "handlers": [
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/isbn/convertTo13",
+          "permissionsRequired": [
+            "isbn-utils.convert-to-13.get"
+          ],
+          "modulePermissions": []
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/isbn/convertTo10",
+          "permissionsRequired": [
+            "isbn-utils.convert-to-10.get"
+          ],
+          "modulePermissions": []
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/isbn/validator",
+          "permissionsRequired": [
+            "isbn-utils.validator.get"
+          ],
+          "modulePermissions": []
+        }
+      ]
+    },
+    {
+      "id": "inventory-move",
+      "version": "0.2",
+      "handlers": [
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/inventory/items/move",
+          "permissionsRequired": [
+            "inventory.items.move.item.post"
+          ],
+          "modulePermissions": [
+            "inventory-storage.items.item.put",
+            "inventory-storage.items.collection.get",
+            "inventory-storage.holdings.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/inventory/holdings/move",
+          "permissionsRequired": [
+            "inventory.holdings.move.item.post"
+          ],
+          "modulePermissions": [
+            "inventory-storage.holdings.item.put",
+            "inventory-storage.holdings.collection.get",
+            "inventory-storage.instances.item.get"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inventory-event-handlers",
+      "version": "0.1",
+      "handlers": [
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/inventory/handlers/data-import",
+          "permissionsRequired": [
+            "inventory.events.post"
+          ],
+          "modulePermissions": [
+            "pubsub.publish.post",
+            "inventory-storage.items.collection.get",
+            "inventory-storage.items.item.post",
+            "inventory-storage.material-types.item.get",
+            "inventory-storage.material-types.collection.get",
+            "inventory-storage.loan-types.item.get",
+            "inventory-storage.loan-types.collection.get",
+            "inventory-storage.locations.item.get",
+            "inventory-storage.locations.collection.get",
+            "inventory-storage.holdings.collection.get",
+            "inventory-storage.holdings.item.get",
+            "inventory-storage.holdings.item.post",
+            "inventory-storage.instances.collection.get",
+            "inventory-storage.instances.item.get",
+            "inventory-storage.instances.item.post",
+            "inventory-storage.instances.item.put",
+            "inventory-storage.holdings.item.put",
+            "inventory-storage.items.item.put",
+            "inventory-storage.preceding-succeeding-titles.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/inventory/handlers/instances",
+          "permissionsRequired": [
+            "inventory.events.post"
+          ],
+          "modulePermissions": [
+            "inventory-storage.instances.item.get",
+            "inventory-storage.instances.item.put",
+            "pubsub.publish.post"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "_tenant",
+      "version": "1.2",
+      "interfaceType": "system",
+      "handlers": [
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/_/tenant",
+          "modulePermissions": [
+            "pubsub.event-types.post",
+            "pubsub.publishers.post",
+            "pubsub.subscribers.post"
+          ]
+        }
+      ]
+    }
+  ],
+  "requires": [
+    {
+      "id": "item-storage",
+      "version": "8.5"
+    },
+    {
+      "id": "instance-storage",
+      "version": "7.2"
+    },
+    {
+      "id": "instance-storage-batch",
+      "version": "0.2"
+    },
+    {
+      "id": "holdings-storage",
+      "version": "2.0 3.0 4.0"
+    },
+    {
+      "id": "material-types",
+      "version": "2.0"
+    },
+    {
+      "id": "loan-types",
+      "version": "2.0"
+    },
+    {
+      "id": "locations",
+      "version": "2.0 3.0"
+    },
+    {
+      "id": "instance-types",
+      "version": "1.0 2.0"
+    },
+    {
+      "id": "identifier-types",
+      "version": "1.0"
+    },
+    {
+      "id": "contributor-name-types",
+      "version": "1.0"
+    },
+    {
+      "id": "users",
+      "version": "15.0"
+    },
+    {
+      "id": "pubsub-event-types",
+      "version": "0.1"
+    },
+    {
+      "id": "pubsub-publishers",
+      "version": "0.1"
+    },
+    {
+      "id": "pubsub-subscribers",
+      "version": "0.1"
+    },
+    {
+      "id": "pubsub-publish",
+      "version": "0.1"
+    },
+    {
+      "id": "instance-preceding-succeeding-titles",
+      "version": "0.1"
+    },
+    {
+      "id": "request-storage",
+      "version": "3.3"
+    },
+    {
+      "id": "source-storage-records",
+      "version": "2.0"
+    }
+  ],
+  "permissionSets": [
+    {
+      "permissionName": "inventory.items.collection.get",
+      "displayName": "Inventory - get item collection",
+      "description": "Get item collection"
+    },
+    {
+      "permissionName": "inventory.items.collection.delete",
+      "displayName": "Inventory - delete entire item collection",
+      "description": "Delete entire item collection"
+    },
+    {
+      "permissionName": "inventory.items.item.get",
+      "displayName": "Inventory - get individual item",
+      "description": "Get individual item"
+    },
+    {
+      "permissionName": "inventory.items.item.mark-withdrawn.post",
+      "displayName": "Inventory - mark an item as withdrawn",
+      "description": "Mark an item as withdrawn"
+    },
+    {
+      "permissionName": "inventory.items.move.item.post",
+      "displayName": "Inventory - move items to another holdings record",
+      "description": "Move items to another holdings record"
+    },
+    {
+      "permissionName": "inventory.items.item.mark-missing.post",
+      "displayName": "Inventory - mark an item as missing",
+      "description": "Mark an item as missing"
+    },
+    {
+      "permissionName": "inventory.holdings.move.item.post",
+      "displayName": "Inventory - move holdings record to another instance",
+      "description": "Move holdings record to another holdings record"
+    },
+    {
+      "permissionName": "inventory.items.item.post",
+      "displayName": "Inventory - create individual item",
+      "description": "Create individual item"
+    },
+    {
+      "permissionName": "inventory.items.item.put",
+      "displayName": "Inventory - modify item",
+      "description": "Modify item"
+    },
+    {
+      "permissionName": "inventory.items.item.delete",
+      "displayName": "Inventory - delete individual item",
+      "description": "Delete individual item"
+    },
+    {
+      "permissionName": "inventory.instances.collection.get",
+      "displayName": "Inventory - get instance collection",
+      "description": "Get instance collection"
+    },
+    {
+      "permissionName": "inventory.instances.collection.delete",
+      "displayName": "Inventory - delete entire instance collection",
+      "description": "Delete entire instance collection"
+    },
+    {
+      "permissionName": "inventory.instances.item.get",
+      "displayName": "Inventory - get individual instance",
+      "description": "Get individual instance"
+    },
+    {
+      "permissionName": "inventory.instances.item.post",
+      "displayName": "Inventory - create individual instance",
+      "description": "Create individual instance"
+    },
+    {
+      "permissionName": "inventory.instances.batch.post",
+      "displayName": "Inventory - create batch of individual instance",
+      "description": "Create batch of individual instance"
+    },
+    {
+      "permissionName": "inventory.instances.item.put",
+      "displayName": "Inventory - modify instance",
+      "description": "Modify instance"
+    },
+    {
+      "permissionName": "inventory.instances.item.delete",
+      "displayName": "Inventory - delete individual instance",
+      "description": "Delete individual instance"
+    },
+    {
+      "permissionName": "inventory.ingest.mods.post",
+      "displayName": "Inventory - ingest a MODS format file",
+      "description": "Request ingestion of a MODS format file"
+    },
+    {
+      "permissionName": "inventory.ingest.mods.status.get",
+      "displayName": "Inventory - MODS ingest status",
+      "description": "Check the status of a MODS format file ingestion"
+    },
+    {
+      "permissionName": "inventory.config.instances.blocked-fields.get",
+      "displayName": "Inventory - get configuration for blocked fields of instances",
+      "description": "Get configuration for blocked fields of instances"
+    },
+    {
+      "permissionName": "inventory.events.post",
+      "displayName": "Inventory - post event",
+      "description": "Post event to handle in inventory"
+    },
+    {
+      "permissionName": "inventory.all",
+      "displayName": "Inventory - all permissions",
+      "description": "Entire set of permissions needed to use the inventory",
+      "subPermissions": [
+        "inventory.items.collection.get",
+        "inventory.items.item.get",
+        "inventory.items.item.post",
+        "inventory.items.item.put",
+        "inventory.items.item.delete",
+        "inventory.items.collection.delete",
+        "inventory.instances.collection.get",
+        "inventory.instances.item.get",
+        "inventory.instances.item.post",
+        "inventory.instances.batch.post",
+        "inventory.instances.item.put",
+        "inventory.instances.item.delete",
+        "inventory.instances.collection.delete",
+        "inventory.ingest.mods.post",
+        "inventory.ingest.mods.status.get",
+        "inventory.config.instances.blocked-fields.get",
+        "inventory.items.item.mark-withdrawn.post",
+        "inventory.items.item.mark-missing.post",
+        "inventory.items.move.item.post",
+        "inventory.holdings.move.item.post"
+      ]
+    },
+    {
+      "permissionName": "isbn-utils.convert-to-13.get",
+      "displayName": "ISBN utils - convert to ISBN-13 format",
+      "description": "Convert isbn code to ISBN-13 format"
+    },
+    {
+      "permissionName": "isbn-utils.convert-to-10.get",
+      "displayName": "ISBN utils - convert to ISBN-10 format",
+      "description": "Convert isbn code to ISBN-10 format"
+    },
+    {
+      "permissionName": "isbn-utils.validator.get",
+      "displayName": "ISBN utils - validate ISBN code",
+      "description": "Check that isbn code is valid"
+    },
+    {
+      "permissionName": "isbn-utils.all",
+      "displayName": "Isbn-utils - all permissions",
+      "description": "Entire set of permissions needed to use the isbn-utils",
+      "subPermissions": [
+        "isbn-utils.convert-to-13.get",
+        "isbn-utils.convert-to-10.get",
+        "isbn-utils.validator.get"
+      ]
+    }
+  ]
+}

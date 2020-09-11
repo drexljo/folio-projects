@@ -1,0 +1,3 @@
+etc/folio/mod-ncip/module.env etc/folio/mod-ncip
+lib/systemd/system/folio-mod-ncip@.service lib/systemd/system
+usr/share/folio/mod-ncip usr/share/folio

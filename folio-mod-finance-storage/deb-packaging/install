@@ -1,0 +1,3 @@
+etc/folio/mod-finance-storage/module.env etc/folio/mod-finance-storage
+lib/systemd/system/folio-mod-finance-storage@.service lib/systemd/system
+usr/share/folio/mod-finance-storage usr/share/folio

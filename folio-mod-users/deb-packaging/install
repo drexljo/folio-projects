@@ -1,0 +1,3 @@
+etc/folio/mod-users/module.env etc/folio/mod-users
+lib/systemd/system/folio-mod-users@.service lib/systemd/system
+usr/share/folio/mod-users usr/share/folio

@@ -1,0 +1,3 @@
+etc/folio/mod-source-record-storage/module.env etc/folio/mod-source-record-storage
+lib/systemd/system/folio-mod-source-record-storage@.service lib/systemd/system
+usr/share/folio/mod-source-record-storage usr/share/folio

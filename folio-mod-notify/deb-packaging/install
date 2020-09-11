@@ -1,0 +1,3 @@
+etc/folio/mod-notify/module.env etc/folio/mod-notify
+lib/systemd/system/folio-mod-notify@.service lib/systemd/system
+usr/share/folio/mod-notify usr/share/folio

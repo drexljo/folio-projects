@@ -1,0 +1,83 @@
+{
+  "id": "mod-user-import-3.3.0-SNAPSHOT",
+  "name": "User import",
+  "provides": [
+    {
+      "id": "user-import",
+      "version": "2.1",
+      "handlers": [
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/user-import",
+          "permissionsRequired": [
+            "user-import.add"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/user-import",
+          "permissionsRequired": [
+            "user-import.add"
+          ],
+          "modulePermissions": [
+            "addresstypes.collection.get",
+            "circulation-storage.request-preferences.collection.get",
+            "circulation-storage.request-preferences.item.delete",
+            "circulation-storage.request-preferences.item.post",
+            "circulation-storage.request-preferences.item.put",
+            "departments.collection.get",
+            "departments.item.post",
+            "departments.item.put",
+            "inventory-storage.service-points.collection.get",
+            "perms.users.item.post",
+            "user-settings.custom-fields.collection.get",
+            "user-settings.custom-fields.collection.put",
+            "usergroups.collection.get",
+            "users.collection.get",
+            "users.item.get",
+            "users.item.post",
+            "users.item.put"
+          ]
+        }
+      ]
+    }
+  ],
+  "permissionSets": [
+    {
+      "permissionName": "user-import.add",
+      "displayName": "Import users",
+      "description": ""
+    },
+    {
+      "permissionName": "user-import.all",
+      "displayName": "User import - all permissions",
+      "description": "",
+      "subPermissions": [
+        "user-import.add"
+      ],
+      "visible": true
+    }
+  ],
+  "requires": [
+    {
+      "id": "permissions",
+      "version": "5.0"
+    },
+    {
+      "id": "users",
+      "version": "15.1"
+    },
+    {
+      "id": "request-preference-storage",
+      "version": "2.0"
+    },
+    {
+      "id": "service-points",
+      "version": "3.2"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+etc/folio/mod-quick-marc/module.env etc/folio/mod-quick-marc
+lib/systemd/system/folio-mod-quick-marc@.service lib/systemd/system
+usr/share/folio/mod-quick-marc usr/share/folio

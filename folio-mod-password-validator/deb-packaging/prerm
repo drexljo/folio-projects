@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+FM_MODULE="mod-password-validator"
+
+if [ "$1" = "remove" ]
+  then
+    # Stop and disable services
+    systemctl stop folio-$FM_MODULE@*
+    systemctl disable folio-$FM_MODULE@
+fi
+
+#DEBHELPER#
+
+exit 0

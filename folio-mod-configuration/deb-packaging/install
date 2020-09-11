@@ -1,0 +1,3 @@
+etc/folio/mod-configuration/module.env etc/folio/mod-configuration
+lib/systemd/system/folio-mod-configuration@.service lib/systemd/system
+usr/share/folio/mod-configuration usr/share/folio

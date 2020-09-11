@@ -1,0 +1,3 @@
+etc/folio/mod-gobi/module.env etc/folio/mod-gobi
+lib/systemd/system/folio-mod-gobi@.service lib/systemd/system
+usr/share/folio/mod-gobi usr/share/folio

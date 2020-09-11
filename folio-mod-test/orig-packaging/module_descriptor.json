@@ -7,7 +7,10 @@
       "version": "2.2",
       "handlers": [
         {
-          "methods": [ "GET", "POST" ],
+          "methods": [
+            "GET",
+            "POST"
+          ],
           "pathPattern": "/testb",
           "permissionsRequired": []
         }
@@ -18,7 +21,9 @@
       "version": "1.0",
       "handlers": [
         {
-          "methods": [ "GET" ],
+          "methods": [
+            "GET"
+          ],
           "pathPattern": "/recurse",
           "permissionsRequired": []
         }

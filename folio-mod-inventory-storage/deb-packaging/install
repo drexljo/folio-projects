@@ -1,0 +1,3 @@
+etc/folio/mod-inventory-storage/module.env etc/folio/mod-inventory-storage
+lib/systemd/system/folio-mod-inventory-storage@.service lib/systemd/system
+usr/share/folio/mod-inventory-storage usr/share/folio

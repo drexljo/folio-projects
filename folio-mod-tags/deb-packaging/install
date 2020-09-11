@@ -1,0 +1,3 @@
+etc/folio/mod-tags/module.env etc/folio/mod-tags
+lib/systemd/system/folio-mod-tags@.service lib/systemd/system
+usr/share/folio/mod-tags usr/share/folio

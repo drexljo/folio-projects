@@ -1,0 +1,3 @@
+etc/folio/mod-notes/module.env etc/folio/mod-notes
+lib/systemd/system/folio-mod-notes@.service lib/systemd/system
+usr/share/folio/mod-notes usr/share/folio

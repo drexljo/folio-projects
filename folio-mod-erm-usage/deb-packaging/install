@@ -1,0 +1,3 @@
+etc/folio/mod-erm-usage/module.env etc/folio/mod-erm-usage
+lib/systemd/system/folio-mod-erm-usage@.service lib/systemd/system
+usr/share/folio/mod-erm-usage usr/share/folio

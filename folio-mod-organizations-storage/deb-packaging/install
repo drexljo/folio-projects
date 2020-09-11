@@ -1,0 +1,3 @@
+etc/folio/mod-organizations-storage/module.env etc/folio/mod-organizations-storage
+lib/systemd/system/folio-mod-organizations-storage@.service lib/systemd/system
+usr/share/folio/mod-organizations-storage usr/share/folio

@@ -1,0 +1,3 @@
+etc/folio/mod-codex-ekb/module.env etc/folio/mod-codex-ekb
+lib/systemd/system/folio-mod-codex-ekb@.service lib/systemd/system
+usr/share/folio/mod-codex-ekb usr/share/folio

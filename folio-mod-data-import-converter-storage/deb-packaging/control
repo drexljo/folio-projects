@@ -1,0 +1,14 @@
+Source: folio-mod-data-import-converter-storage
+Maintainer: Jo Drexl <johannes.drexl@lrz.de>
+Section: net
+Priority: extra
+Build-Depends: debhelper (>= 10.2.5~)
+Standards-Version: 3.9.8
+Homepage: https://github.com/folio-org/mod-data-import-converter-storage
+
+Package: folio-mod-data-import-converter-storage
+Architecture: all
+Depends: ${misc:Depends}, ${misc:Pre-Depends}, ${shlibs:Depends}, adduser (>= 3.113~), openjdk-8-jre | openjdk-8-jdk | openjdk-11-jre | openjdk-11-jdk, bash (>= 4.3~), folio-libmods (>= 0.6~)
+Suggests: folio-okapi, postgresql
+Description: FOLIO data-import-converter-storage module
+ Implements the folio module mod-data-import-converter-storage

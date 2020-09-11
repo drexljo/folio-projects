@@ -1,0 +1,3 @@
+etc/folio/mod-authtoken/module.env etc/folio/mod-authtoken
+lib/systemd/system/folio-mod-authtoken@.service lib/systemd/system
+usr/share/folio/mod-authtoken usr/share/folio

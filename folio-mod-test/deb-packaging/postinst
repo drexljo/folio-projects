@@ -1,5 +1,5 @@
 #!/bin/sh
-# postinst script for folio-mod-authtoken
+# postinst script for folio-mod-test
 #
 # see: dh_installdeb(1)
 

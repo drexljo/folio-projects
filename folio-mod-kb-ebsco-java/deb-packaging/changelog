@@ -1,0 +1,5 @@
+folio-mod-kb-ebsco-java (3.5.3-1) UNRELEASED; urgency=low (private test build)
+
+  * Test for debian installer
+
+ -- Jo Drexl <johannes.drexl@lrz.de>  Tue, 08 Sep 2020 11:03:49 +0200

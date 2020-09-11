@@ -1,0 +1,3 @@
+etc/folio/mod-permissions/module.env etc/folio/mod-permissions
+lib/systemd/system/folio-mod-permissions@.service lib/systemd/system
+usr/share/folio/mod-permissions usr/share/folio

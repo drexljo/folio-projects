@@ -1,0 +1,3 @@
+etc/folio/mod-event-config/module.env etc/folio/mod-event-config
+lib/systemd/system/folio-mod-event-config@.service lib/systemd/system
+usr/share/folio/mod-event-config usr/share/folio

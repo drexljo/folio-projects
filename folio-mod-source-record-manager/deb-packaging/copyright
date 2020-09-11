@@ -1,0 +1,10 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: folio-org/mod-source-record-manager
+Source: https://github.com/folio-org/mod-source-record-manager
+
+Files: *
+Copyright: 2015-2020 The Open Library Foundation
+License: Apache-2.0
+ On Debian systems, the full text of the Apache License
+ Version 2 can be found in the file
+   `/usr/share/common-licenses/Apache-2.0'

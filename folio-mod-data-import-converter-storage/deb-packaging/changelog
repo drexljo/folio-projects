@@ -1,0 +1,5 @@
+folio-mod-data-import-converter-storage (0.0.0-0) UNRELEASED; urgency=low (private test build)
+
+  * Test for debian installer
+
+ -- Jo Drexl <johannes.drexl@lrz.de>  Tue, 08 Sep 2020 11:03:49 +0200

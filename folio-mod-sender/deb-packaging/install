@@ -1,0 +1,3 @@
+etc/folio/mod-sender/module.env etc/folio/mod-sender
+lib/systemd/system/folio-mod-sender@.service lib/systemd/system
+usr/share/folio/mod-sender usr/share/folio

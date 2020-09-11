@@ -1,0 +1,3 @@
+etc/folio/mod-licenses/module.env etc/folio/mod-licenses
+lib/systemd/system/folio-mod-licenses@.service lib/systemd/system
+usr/share/folio/mod-licenses usr/share/folio

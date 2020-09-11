@@ -1,0 +1,4 @@
+etc/folio/mod-erm-usage-harvester/config.json etc/folio/mod-erm-usage-harvester
+etc/folio/mod-erm-usage-harvester/module.env etc/folio/mod-erm-usage-harvester
+lib/systemd/system/folio-mod-erm-usage-harvester@.service lib/systemd/system
+usr/share/folio/mod-erm-usage-harvester usr/share/folio

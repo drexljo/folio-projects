@@ -1,0 +1,42 @@
+{
+  "id": "mod-sender-1.4.0-SNAPSHOT",
+  "name": "Mod sender",
+  "requires": [
+    {
+      "id": "users",
+      "version": "15.0"
+    },
+    {
+      "id": "email",
+      "version": "1.0"
+    }
+  ],
+  "provides": [
+    {
+      "id": "message-delivery",
+      "version": "1.0",
+      "handlers": [
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/message-delivery",
+          "permissionsRequired": [
+            "sender.message-delivery"
+          ],
+          "modulePermissions": [
+            "email.message.post",
+            "users.item.get"
+          ]
+        }
+      ]
+    }
+  ],
+  "permissionSets": [
+    {
+      "permissionName": "sender.message-delivery",
+      "displayName": "Message delivery",
+      "description": "Send message"
+    }
+  ]
+}

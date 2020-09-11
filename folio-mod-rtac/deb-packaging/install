@@ -1,0 +1,3 @@
+etc/folio/mod-rtac/module.env etc/folio/mod-rtac
+lib/systemd/system/folio-mod-rtac@.service lib/systemd/system
+usr/share/folio/mod-rtac usr/share/folio

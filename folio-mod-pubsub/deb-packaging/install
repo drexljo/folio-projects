@@ -1,0 +1,3 @@
+etc/folio/mod-pubsub/module.env etc/folio/mod-pubsub
+lib/systemd/system/folio-mod-pubsub@.service lib/systemd/system
+usr/share/folio/mod-pubsub usr/share/folio

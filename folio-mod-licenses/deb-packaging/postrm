@@ -1,0 +1,34 @@
+#!/bin/sh
+set -e
+
+# Set module name
+FM_MODULE="mod-licenses"
+
+if [ "$1" = "purge" ]
+  then
+    # Delete generated configs
+    rm -f /etc/folio/$FM_MODULE/dbcredentials.env
+    rm -f /etc/folio/$FM_MODULE/okapi_connect.env
+    rm -f /etc/folio/$FM_MODULE/tenants
+    # Remove config directory
+    [ -d /etc/folio/$FM_MODULE ] && rmdir --ignore-fail-on-non-empty /etc/folio/$FM_MODULE || true
+    # Remove config parent directory
+    [ -d /etc/folio ] && rmdir --ignore-fail-on-non-empty /etc/folio || true
+
+    # Delete temporary files in user home directory, if necessary
+    rm -f /var/lib/folio/$FM_MODULE/.okapi
+    rm -f /var/lib/folio/$FM_MODULE/.tenants
+    
+    # Delete empty user home directory
+    [ -d /var/lib/folio/$FM_MODULE ] \
+      && rmdir --ignore-fail-on-non-empty /var/lib/folio/$FM_MODULE
+    # Delete empty folio directory
+    [ -d /var/lib/folio ] \
+      && rmdir --ignore-fail-on-non-empty /var/lib/folio
+    # Delete user if home directoy is nonexisting
+    deluser folio-$FM_MODULE || true
+fi
+
+#DEBHELPER#
+
+exit 0

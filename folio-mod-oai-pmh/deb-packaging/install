@@ -1,0 +1,3 @@
+etc/folio/mod-oai-pmh/module.env etc/folio/mod-oai-pmh
+lib/systemd/system/folio-mod-oai-pmh@.service lib/systemd/system
+usr/share/folio/mod-oai-pmh usr/share/folio

@@ -1,0 +1,3 @@
+etc/folio/mod-template-engine/module.env etc/folio/mod-template-engine
+lib/systemd/system/folio-mod-template-engine@.service lib/systemd/system
+usr/share/folio/mod-template-engine usr/share/folio

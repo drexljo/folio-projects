@@ -1,0 +1,3 @@
+etc/folio/mod-codex-mux/module.env etc/folio/mod-codex-mux
+lib/systemd/system/folio-mod-codex-mux@.service lib/systemd/system
+usr/share/folio/mod-codex-mux usr/share/folio

@@ -1,0 +1,3 @@
+etc/folio/mod-invoice/module.env etc/folio/mod-invoice
+lib/systemd/system/folio-mod-invoice@.service lib/systemd/system
+usr/share/folio/mod-invoice usr/share/folio

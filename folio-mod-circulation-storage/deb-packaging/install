@@ -1,0 +1,3 @@
+etc/folio/mod-circulation-storage/module.env etc/folio/mod-circulation-storage
+lib/systemd/system/folio-mod-circulation-storage@.service lib/systemd/system
+usr/share/folio/mod-circulation-storage usr/share/folio

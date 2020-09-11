@@ -1,0 +1,3 @@
+etc/folio/mod-patron/module.env etc/folio/mod-patron
+lib/systemd/system/folio-mod-patron@.service lib/systemd/system
+usr/share/folio/mod-patron usr/share/folio

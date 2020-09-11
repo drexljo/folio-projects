@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Dump environment as well as the process parameters from all docker containers
+# to the respective file in current directory
+sudo docker ps | while read LINE
+  do 
+    # Get container ID and name of the running process inside
+    ID=$(echo "$LINE" | cut -d " " -f 1)
+    MOD=$(echo "$LINE" | cut -d "/" -f 2 | cut -d " " -f 1 | cut -d ":" -f 1)
+    # Ignore first line, which is just docker explanation
+    if [ "$MOD" = "CONTAINER" ]
+      then continue
+    fi
+    # Delete an existing old file, so we don't have screwed up files
+    rm -f "$MOD"
+    # Dump environment
+    sudo docker container exec "$ID" printenv | sort -u >> "$MOD"
+    echo "" >> "$MOD"
+    # Dump process command line
+    sudo docker container exec "$ID" ps ax | grep "    1" >> "$MOD"
+  done
+
+exit 0

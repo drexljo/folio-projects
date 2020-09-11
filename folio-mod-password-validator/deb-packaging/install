@@ -1,0 +1,3 @@
+etc/folio/mod-password-validator/module.env etc/folio/mod-password-validator
+lib/systemd/system/folio-mod-password-validator@.service lib/systemd/system
+usr/share/folio/mod-password-validator usr/share/folio

@@ -1,0 +1,53 @@
+[Unit]
+Description=FOLIO mod-inventory service
+Wants=postgresql.service folio-okapi.service
+After=network-online.target postgresql.service folio-okapi.service
+Requires=network-online.target
+
+[Service]
+Type=exec
+EnvironmentFile=/etc/folio/mod-inventory/dbcredentials.env
+EnvironmentFile=/etc/folio/mod-inventory/okapi_connect.env
+EnvironmentFile=/etc/folio/mod-inventory/module.env
+Environment=PORT="%i"
+User=folio-mod-inventory
+Group=folio-mod-inventory
+
+# Starting routines
+ExecStartPre=+/usr/share/folio/libmods/bin/board on
+ExecStart=/bin/sh -c "/usr/bin/java -Dport=$PORT $JAVA_OPTIONS \
+          -jar /usr/share/folio/mod-inventory/lib/mod-inventory.jar"
+ExecStartPost=/usr/share/folio/libmods/bin/call_tower signon
+
+# Stopping routines
+ExecStop=/usr/share/folio/libmods/bin/call_tower signoff
+# The Java process will be terminated by Systemd itself
+
+# Execute after java has terminated
+# Signoff again in case something went wrong
+ExecStopPost=/usr/share/folio/libmods/bin/call_tower signoff
+ExecStopPost=+/usr/share/folio/libmods/bin/board off
+
+WorkingDirectory=/var/lib/folio/mod-inventory
+
+# JVM exits with code 128+15 on default SIGTERM
+SuccessExitStatus=143
+
+# Send SIGKILL 90 seconds (systemd default) after SIGTERM has been issued 
+TimeoutStopSec=30
+
+# Wait 2 seconds before restarting, unless the restart has been issued 3 times 
+# within one minute, which would indicate a persistent grave problem
+Restart=always
+RestartSec=2
+StartLimitBurst=3
+StartLimitInterval=60
+
+# Because some dev thought it a great idea to grab a global hardcoded
+# vert.x cache directory for whoever takes it first, we have to sandbox here,
+# in case other java processes are using vert.x too.
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
+WantedBy=folio-okapi.service

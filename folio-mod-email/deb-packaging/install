@@ -1,0 +1,3 @@
+etc/folio/mod-email/module.env etc/folio/mod-email
+lib/systemd/system/folio-mod-email@.service lib/systemd/system
+usr/share/folio/mod-email usr/share/folio

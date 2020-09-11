@@ -1,0 +1,3 @@
+etc/folio/mod-orders/module.env etc/folio/mod-orders
+lib/systemd/system/folio-mod-orders@.service lib/systemd/system
+usr/share/folio/mod-orders usr/share/folio

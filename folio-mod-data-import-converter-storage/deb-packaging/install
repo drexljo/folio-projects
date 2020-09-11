@@ -1,0 +1,3 @@
+etc/folio/mod-data-import-converter-storage/module.env etc/folio/mod-data-import-converter-storage
+lib/systemd/system/folio-mod-data-import-converter-storage@.service lib/systemd/system
+usr/share/folio/mod-data-import-converter-storage usr/share/folio
