@@ -1,3 +1,3 @@
-# genesis-projects
+# Folio-projects
 
-Harbors all files necessary for Bob the Builder to build packages.
+Harbors all files necessary for the buildserver to build packages.
