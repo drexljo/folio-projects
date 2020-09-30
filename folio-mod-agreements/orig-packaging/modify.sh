@@ -3,7 +3,7 @@
 # Get parameter 1 (package name)
 PACKAGE="$1"
 
-INFILE="$BH_BINPATH/$PACKAGE/target/ModuleDescriptor.json"
+INFILE="$BH_BINPATH/$PACKAGE/service/build/resources/main/okapi/ModuleDescriptor.json"
 OUTFILE="module_descriptor.json"
 
 # Execute the ModuleDescriptor.json modifying script 'prep_moduledescriptors.py'

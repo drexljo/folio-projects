@@ -1,4 +1,4 @@
-folio-mod-invoice-storage (0.0.0-0) UNRELEASED; urgency=low (private test build)
+folio-mod-invoice-storage (4.1.0-1) UNRELEASED; urgency=low (private test build)
 
   * Test for debian installer
 

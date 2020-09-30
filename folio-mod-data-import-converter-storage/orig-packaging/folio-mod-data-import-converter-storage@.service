@@ -16,7 +16,7 @@ Group=folio-mod-data-import-converter-storage
 # Starting routines
 ExecStartPre=+/usr/share/folio/libmods/bin/board on
 ExecStart=/bin/sh -c "/usr/bin/java -Dport=$PORT $JAVA_OPTIONS \
-          -jar /usr/share/folio/mod-data-import-converter-storage/lib/mod-data-import-converter-storage-fat.jar"
+          -jar /usr/share/folio/mod-data-import-converter-storage/lib/mod-data-import-converter-storage-server-fat.jar"
 ExecStartPost=/usr/share/folio/libmods/bin/call_tower signon
 
 # Stopping routines

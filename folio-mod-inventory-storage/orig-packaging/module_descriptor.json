@@ -79,7 +79,7 @@
     },
     {
       "id": "holdings-storage",
-      "version": "4.3",
+      "version": "4.4",
       "handlers": [
         {
           "methods": [
@@ -252,7 +252,7 @@
           ],
           "pathPattern": "/instance-storage/instance-relationships",
           "permissionsRequired": [
-            "inventory-storage.instances.item.get"
+            "inventory-storage.instance-relationships.collection.get"
           ]
         },
         {
@@ -261,7 +261,7 @@
           ],
           "pathPattern": "/instance-storage/instance-relationships",
           "permissionsRequired": [
-            "inventory-storage.instances.item.post"
+            "inventory-storage.instance-relationships.item.post"
           ]
         },
         {
@@ -270,7 +270,7 @@
           ],
           "pathPattern": "/instance-storage/instance-relationships/{id}",
           "permissionsRequired": [
-            "inventory-storage.instances.item.get"
+            "inventory-storage.instance-relationships.item.get"
           ]
         },
         {
@@ -279,7 +279,7 @@
           ],
           "pathPattern": "/instance-storage/instance-relationships/{id}",
           "permissionsRequired": [
-            "inventory-storage.instances.item.put"
+            "inventory-storage.instance-relationships.item.put"
           ]
         },
         {
@@ -288,7 +288,7 @@
           ],
           "pathPattern": "/instance-storage/instance-relationships/{id}",
           "permissionsRequired": [
-            "inventory-storage.instances.item.delete"
+            "inventory-storage.instance-relationships.item.delete"
           ]
         }
       ]
@@ -1932,6 +1932,57 @@
       ]
     },
     {
+      "id": "holdings-sources",
+      "version": "1.0",
+      "handlers": [
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/holdings-sources",
+          "permissionsRequired": [
+            "inventory-storage.holdings-sources.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/holdings-sources/{id}",
+          "permissionsRequired": [
+            "inventory-storage.holdings-sources.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/holdings-sources",
+          "permissionsRequired": [
+            "inventory-storage.holdings-sources.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/holdings-sources/{id}",
+          "permissionsRequired": [
+            "inventory-storage.holdings-sources.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/holdings-sources/{id}",
+          "permissionsRequired": [
+            "inventory-storage.holdings-sources.item.delete"
+          ]
+        }
+      ]
+    },
+    {
       "id": "_tenant",
       "version": "1.2",
       "interfaceType": "system",
@@ -2023,6 +2074,31 @@
     }
   ],
   "permissionSets": [
+    {
+      "permissionName": "inventory-storage.instance-relationships.collection.get",
+      "displayName": "inventory storage - get instance relationships by query",
+      "description": "get instance relationships by query"
+    },
+    {
+      "permissionName": "inventory-storage.instance-relationships.item.get",
+      "displayName": "inventory storage - get instance relationship by id",
+      "description": "get instance relationship by id"
+    },
+    {
+      "permissionName": "inventory-storage.instance-relationships.item.post",
+      "displayName": "inventory storage - create an instance relationship",
+      "description": "create an instance relationship"
+    },
+    {
+      "permissionName": "inventory-storage.instance-relationships.item.put",
+      "displayName": "inventory storage - modify an instance relationship",
+      "description": "modify an instance relationship"
+    },
+    {
+      "permissionName": "inventory-storage.instance-relationships.item.delete",
+      "displayName": "inventory storage - delete an instance relationship",
+      "description": "delete an instance relationship"
+    },
     {
       "permissionName": "inventory-storage.items.collection.get",
       "displayName": "inventory storage - get item collection",
@@ -2964,6 +3040,31 @@
       "description": "get instances holdings and items for inventory storage"
     },
     {
+      "permissionName": "inventory-storage.holdings-sources.collection.get",
+      "displayName": "inventory storage - get holdings-source collection",
+      "description": "get holdings-records-source collection from storage"
+    },
+    {
+      "permissionName": "inventory-storage.holdings-sources.item.get",
+      "displayName": "inventory storage - get individual holdings-source",
+      "description": "get individual holdings-records-source from storage"
+    },
+    {
+      "permissionName": "inventory-storage.holdings-sources.item.post",
+      "displayName": "inventory storage - create individual holdings-source",
+      "description": "create individual holdings-records-source in storage"
+    },
+    {
+      "permissionName": "inventory-storage.holdings-sources.item.put",
+      "displayName": "inventory storage - modify holdings-source",
+      "description": "modify holdings-records-source in storage"
+    },
+    {
+      "permissionName": "inventory-storage.holdings-sources.item.delete",
+      "displayName": "inventory storage - delete individual holdings-source",
+      "description": "delete individual holdings-source from storage"
+    },
+    {
       "permissionName": "inventory-storage.all",
       "displayName": "inventory storage module - all permissions",
       "description": "Entire set of permissions needed to use the inventory storage module",
@@ -3028,6 +3129,11 @@
         "inventory-storage.locations.item.post",
         "inventory-storage.locations.item.put",
         "inventory-storage.locations.item.delete",
+        "inventory-storage.instance-relationships.collection.get",
+        "inventory-storage.instance-relationships.item.get",
+        "inventory-storage.instance-relationships.item.post",
+        "inventory-storage.instance-relationships.item.put",
+        "inventory-storage.instance-relationships.item.delete",
         "inventory-storage.instance-relationship-types.collection.get",
         "inventory-storage.instance-relationship-types.item.get",
         "inventory-storage.instance-relationship-types.item.post",
@@ -3154,6 +3260,11 @@
         "inventory-storage.oai-pmh-view.instances.collection.get",
         "inventory-storage.oai-pmh-view.updatedinstanceids.collection.get",
         "inventory-storage.oai-pmh-view.enrichedinstances.collection.post",
+        "inventory-storage.holdings-sources.collection.get",
+        "inventory-storage.holdings-sources.get",
+        "inventory-storage.holdings-sources.post",
+        "inventory-storage.holdings-sources.put",
+        "inventory-storage.holdings-sources.delete",
         "inventory-storage.inventory-hierarchy.updated-instances-ids.collection.get",
         "inventory-storage.inventory-hierarchy.items-and-holdings.collection.post"
       ]

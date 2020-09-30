@@ -1,0 +1,333 @@
+{
+  "id": "mod-source-record-storage-4.1.0-SNAPSHOT",
+  "name": "Source Record Storage Module",
+  "requires": [
+    {
+      "id": "pubsub-event-types",
+      "version": "0.1"
+    },
+    {
+      "id": "pubsub-publishers",
+      "version": "0.1"
+    },
+    {
+      "id": "pubsub-subscribers",
+      "version": "0.1"
+    },
+    {
+      "id": "pubsub-publish",
+      "version": "0.1"
+    }
+  ],
+  "provides": [
+    {
+      "id": "source-storage-snapshots",
+      "version": "2.0",
+      "handlers": [
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/source-storage/snapshots",
+          "permissionsRequired": [
+            "source-storage.snapshots.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/source-storage/snapshots",
+          "permissionsRequired": [
+            "source-storage.snapshots.post"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/source-storage/snapshots/{jobExecutionId}",
+          "permissionsRequired": [
+            "source-storage.snapshots.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/source-storage/snapshots/{jobExecutionId}",
+          "permissionsRequired": [
+            "source-storage.snapshots.put"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/source-storage/snapshots/{jobExecutionId}",
+          "permissionsRequired": [
+            "source-storage.snapshots.delete"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "source-storage-records",
+      "version": "2.0",
+      "handlers": [
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/source-storage/records",
+          "permissionsRequired": [
+            "source-storage.records.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/source-storage/records",
+          "permissionsRequired": [
+            "source-storage.records.post"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/source-storage/records/{id}",
+          "permissionsRequired": [
+            "source-storage.records.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/source-storage/records/{id}",
+          "permissionsRequired": [
+            "source-storage.records.put"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/source-storage/records/{id}",
+          "permissionsRequired": [
+            "source-storage.records.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/source-storage/records/{id}/formatted",
+          "permissionsRequired": [
+            "source-storage.records.get"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/source-storage/records/{id}/suppress-from-discovery",
+          "permissionsRequired": [
+            "source-storage.records.update"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "source-storage-source-records",
+      "version": "2.0",
+      "handlers": [
+        {
+          "methods": [
+            "GET",
+            "POST"
+          ],
+          "pathPattern": "/source-storage/source-records",
+          "permissionsRequired": [
+            "source-storage.sourceRecords.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/source-storage/source-records/{id}",
+          "permissionsRequired": [
+            "source-storage.sourceRecords.get"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "source-storage-test-records",
+      "version": "2.0",
+      "handlers": [
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/source-storage/populate-test-marc-records",
+          "permissionsRequired": [
+            "source-storage.populate.records"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "source-storage-batch",
+      "version": "0.1",
+      "handlers": [
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/source-storage/batch/records",
+          "permissionsRequired": [
+            "source-storage.records.post"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/source-storage/batch/parsed-records",
+          "permissionsRequired": [
+            "source-storage.records.put"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "source-storage-event-handlers",
+      "version": "1.0",
+      "handlers": [
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/source-storage/handlers/data-import",
+          "permissionsRequired": [
+            "source-storage.events.post"
+          ],
+          "modulePermissions": [
+            "pubsub.publish.post"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/source-storage/handlers/updated-record",
+          "permissionsRequired": [
+            "source-storage.events.post"
+          ],
+          "modulePermissions": [
+            "pubsub.publish.post"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "_tenant",
+      "version": "1.2",
+      "interfaceType": "system",
+      "handlers": [
+        {
+          "methods": [
+            "POST",
+            "DELETE"
+          ],
+          "pathPattern": "/_/tenant",
+          "modulePermissions": [
+            "pubsub.event-types.post",
+            "pubsub.publishers.post",
+            "pubsub.subscribers.post"
+          ]
+        }
+      ]
+    }
+  ],
+  "permissionSets": [
+    {
+      "permissionName": "source-storage.populate.records",
+      "displayName": "Source Storage - populate storage with test records",
+      "description": "Populate storage with test records"
+    },
+    {
+      "permissionName": "source-storage.snapshots.get",
+      "displayName": "Source Storage - get snapshot(s)",
+      "description": "Get Snapshot(s)"
+    },
+    {
+      "permissionName": "source-storage.snapshots.post",
+      "displayName": "Source Storage - create new snapshot",
+      "description": "Post Snapshot"
+    },
+    {
+      "permissionName": "source-storage.snapshots.put",
+      "displayName": "Source Storage - update snapshot",
+      "description": "Put Snapshot"
+    },
+    {
+      "permissionName": "source-storage.snapshots.delete",
+      "displayName": "Source Storage - delete snapshot and records",
+      "description": "Delete Snapshot and all related Records"
+    },
+    {
+      "permissionName": "source-storage.records.get",
+      "displayName": "Source Storage - get record(s)",
+      "description": "Get Record(s)"
+    },
+    {
+      "permissionName": "source-storage.records.post",
+      "displayName": "Source Storage - create new record",
+      "description": "Post Record"
+    },
+    {
+      "permissionName": "source-storage.records.put",
+      "displayName": "Source Storage - update record",
+      "description": "Put Record"
+    },
+    {
+      "permissionName": "source-storage.record.update",
+      "displayName": "Source Storage - update record",
+      "description": "Update Record's fields"
+    },
+    {
+      "permissionName": "source-storage.records.delete",
+      "displayName": "Source Storage - delete record",
+      "description": "Delete Record"
+    },
+    {
+      "permissionName": "source-storage.sourceRecords.get",
+      "displayName": "Source Storage - get results",
+      "description": "Get Results"
+    },
+    {
+      "permissionName": "source-storage.all",
+      "displayName": "Source Record Storage - all permissions",
+      "description": "Entire set of permissions needed to manage snapshots and records",
+      "subPermissions": [
+        "source-storage.populate.records",
+        "source-storage.snapshots.get",
+        "source-storage.snapshots.post",
+        "source-storage.snapshots.put",
+        "source-storage.snapshots.delete",
+        "source-storage.records.get",
+        "source-storage.records.post",
+        "source-storage.records.put",
+        "source-storage.records.delete",
+        "source-storage.record.update",
+        "source-storage.sourceRecords.get"
+      ],
+      "visible": false
+    }
+  ]
+}

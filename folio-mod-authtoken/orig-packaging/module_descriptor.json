@@ -1,0 +1,53 @@
+{
+  "id": "mod-authtoken-2.6.0-SNAPSHOT",
+  "name": "authtoken",
+  "provides": [
+    {
+      "id": "authtoken",
+      "version": "2.0",
+      "handlers": [
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/token",
+          "permissionsRequired": []
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/refreshtoken",
+          "permissionsRequired": []
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/refresh",
+          "permissionsRequired": []
+        }
+      ]
+    }
+  ],
+  "requires": [
+    {
+      "id": "permissions",
+      "version": "5.3"
+    },
+    {
+      "id": "users",
+      "version": "15.0"
+    }
+  ],
+  "filters": [
+    {
+      "methods": [
+        "*"
+      ],
+      "pathPattern": "/*",
+      "phase": "auth",
+      "type": "headers"
+    }
+  ]
+}
