@@ -1,8 +1,19 @@
 [Unit]
 Description=FOLIO mod-oai-pmh service
-Wants=postgresql.service folio-okapi.service
-After=network-online.target postgresql.service folio-okapi.service
+PartOf=folio-mod-oai-pmh.target
+After=folio-okapi.target
+After=network-online.target
+After=postgres.service
 Requires=network-online.target
+Wants=folio-okapi.target
+Wants=postgres.service
+# Folio module dependencies
+After=folio-mod-configuration.target
+Wants=folio-mod-configuration.target
+After=folio-mod-inventory-storage.target
+Wants=folio-mod-inventory-storage.target
+After=folio-mod-source-record-storage.target
+Wants=folio-mod-source-record-storage.target
 
 [Service]
 Type=exec
@@ -12,10 +23,11 @@ EnvironmentFile=/etc/folio/mod-oai-pmh/module.env
 Environment=PORT="%i"
 User=folio-mod-oai-pmh
 Group=folio-mod-oai-pmh
+SyslogIdentifier=folio-modoaipmh
 
 # Starting routines
 ExecStartPre=+/usr/share/folio/libmods/bin/board on
-ExecStart=/bin/sh -c "/usr/bin/java -Dport=$PORT $JAVA_OPTIONS \
+ExecStart=/bin/sh -c "/usr/bin/java -Dhttp.port=$PORT $JAVA_OPTIONS \
           -jar /usr/share/folio/mod-oai-pmh/lib/mod-oai-pmh-fat.jar"
 ExecStartPost=/usr/share/folio/libmods/bin/call_tower signon
 
@@ -49,5 +61,4 @@ StartLimitInterval=60
 PrivateTmp=true
 
 [Install]
-WantedBy=multi-user.target
-WantedBy=folio-okapi.service
+WantedBy=folio-mod-oai-pmh.target

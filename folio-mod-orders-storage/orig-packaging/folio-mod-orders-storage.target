@@ -1,0 +1,5 @@
+[Unit]
+Description=FOLIO mod-orders-storage target
+
+[Install]
+WantedBy=multi-user.target

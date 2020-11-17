@@ -1,8 +1,17 @@
 [Unit]
 Description=FOLIO mod-data-import service
-Wants=postgresql.service folio-okapi.service
-After=network-online.target postgresql.service folio-okapi.service
+PartOf=folio-mod-data-import.target
+After=folio-okapi.target
+After=network-online.target
+After=postgres.service
 Requires=network-online.target
+Wants=folio-okapi.target
+Wants=postgres.service
+# Folio module dependencies
+After=folio-mod-source-record-manager.target
+Wants=folio-mod-source-record-manager.target
+After=folio-mod-users.target
+Wants=folio-mod-users.target
 
 [Service]
 Type=exec
@@ -12,10 +21,11 @@ EnvironmentFile=/etc/folio/mod-data-import/module.env
 Environment=PORT="%i"
 User=folio-mod-data-import
 Group=folio-mod-data-import
+SyslogIdentifier=folio-moddataimp
 
 # Starting routines
 ExecStartPre=+/usr/share/folio/libmods/bin/board on
-ExecStart=/bin/sh -c "/usr/bin/java -Dport=$PORT $JAVA_OPTIONS \
+ExecStart=/bin/sh -c "/usr/bin/java -Dhttp.port=$PORT $JAVA_OPTIONS \
           -jar /usr/share/folio/mod-data-import/lib/mod-data-import-fat.jar"
 ExecStartPost=/usr/share/folio/libmods/bin/call_tower signon
 
@@ -49,5 +59,4 @@ StartLimitInterval=60
 PrivateTmp=true
 
 [Install]
-WantedBy=multi-user.target
-WantedBy=folio-okapi.service
+WantedBy=folio-mod-data-import.target

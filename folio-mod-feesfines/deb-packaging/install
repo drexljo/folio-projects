@@ -1,3 +1,4 @@
 etc/folio/mod-feesfines/module.env etc/folio/mod-feesfines
 lib/systemd/system/folio-mod-feesfines@.service lib/systemd/system
+lib/systemd/system/folio-mod-feesfines.target lib/systemd/system
 usr/share/folio/mod-feesfines usr/share/folio

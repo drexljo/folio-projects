@@ -1,8 +1,12 @@
 [Unit]
 Description=FOLIO mod-agreements service
-Wants=postgresql.service folio-okapi.service
-After=network-online.target postgresql.service folio-okapi.service
+PartOf=folio-mod-agreements.target
+After=folio-okapi.target
+After=network-online.target
+After=postgres.service
 Requires=network-online.target
+Wants=folio-okapi.target
+Wants=postgres.service
 
 [Service]
 Type=exec
@@ -12,11 +16,13 @@ EnvironmentFile=/etc/folio/mod-agreements/module.env
 Environment=PORT="%i"
 User=folio-mod-agreements
 Group=folio-mod-agreements
+SyslogIdentifier=folio-moderm
 
 # Starting routines
 ExecStartPre=+/usr/share/folio/libmods/bin/board on
-ExecStart=/bin/sh -c "/usr/bin/java -Dport=$PORT $JAVA_OPTIONS \
-          -jar /usr/share/folio/mod-agreements/lib/mod-agreements-fat.jar"
+ExecStart=/bin/sh -c "/usr/bin/java $JAVA_OPTIONS \
+          -jar /usr/share/folio/mod-agreements/lib/mod-agreements-fat.jar \
+          --server.port=$PORT"
 ExecStartPost=/usr/share/folio/libmods/bin/call_tower signon
 
 # Stopping routines
@@ -49,5 +55,4 @@ StartLimitInterval=60
 PrivateTmp=true
 
 [Install]
-WantedBy=multi-user.target
-WantedBy=folio-okapi.service
+WantedBy=folio-mod-agreements.target

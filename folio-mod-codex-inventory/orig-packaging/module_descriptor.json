@@ -1,5 +1,5 @@
 {
-  "id": "mod-codex-inventory-1.8.0-SNAPSHOT",
+  "id": "mod-codex-inventory-1.9.0-SNAPSHOT",
   "name": "Codex wrapper for Inventory",
   "requires": [
     {

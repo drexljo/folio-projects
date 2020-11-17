@@ -1,5 +1,5 @@
 {
-  "id": "mod-source-record-storage-4.1.0-SNAPSHOT",
+  "id": "mod-source-record-storage-4.2.0-SNAPSHOT",
   "name": "Source Record Storage Module",
   "requires": [
     {
@@ -67,6 +67,9 @@
           "pathPattern": "/source-storage/snapshots/{jobExecutionId}",
           "permissionsRequired": [
             "source-storage.snapshots.delete"
+          ],
+          "modulePermissions": [
+            "inventory.instances.item.delete"
           ]
         }
       ]

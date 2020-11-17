@@ -1,10 +1,10 @@
 {
-  "id": "mod-inventory-storage-19.4.0-SNAPSHOT",
+  "id": "mod-inventory-storage-19.5.0-SNAPSHOT",
   "name": "Inventory Storage Module",
   "provides": [
     {
       "id": "item-storage",
-      "version": "8.5",
+      "version": "8.6",
       "handlers": [
         {
           "methods": [
@@ -154,7 +154,7 @@
     },
     {
       "id": "instance-storage",
-      "version": "7.4",
+      "version": "7.5",
       "handlers": [
         {
           "methods": [

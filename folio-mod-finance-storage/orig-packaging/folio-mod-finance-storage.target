@@ -1,0 +1,5 @@
+[Unit]
+Description=FOLIO mod-finance-storage target
+
+[Install]
+WantedBy=multi-user.target

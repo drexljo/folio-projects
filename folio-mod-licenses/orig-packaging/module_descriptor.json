@@ -1,10 +1,10 @@
 {
-  "id": "mod-licenses-3.0.0",
+  "id": "mod-licenses-3.1.0",
   "name": "mod-licenses",
   "provides": [
     {
       "id": "licenses",
-      "version": "3.0",
+      "version": "3.1",
       "handlers": [
         {
           "methods": [
@@ -314,6 +314,31 @@
   ],
   "permissionSets": [
     {
+      "permissionName": "licenses.licenses.collection.get",
+      "displayName": "Licenses collection get",
+      "description": "Get a collection of license records"
+    },
+    {
+      "permissionName": "licenses.licenses.item.get",
+      "displayName": "Licenses item get",
+      "description": "Get an license record"
+    },
+    {
+      "permissionName": "licenses.licenses.item.linkedAgreements.get",
+      "displayName": "Licenses item linked agreements get",
+      "description": "Get an license's linked agreement records"
+    },
+    {
+      "permissionName": "licenses.agreements.linkedLicenses.get",
+      "displayName": "Licenses agreements linked license get",
+      "description": "Get the linked licenses for an agreement record"
+    },
+    {
+      "permissionName": "licenses.compareTerms",
+      "displayName": "Licenses compare terms",
+      "description": "Compare license terms"
+    },
+    {
       "permissionName": "licenses.licenses.view",
       "subPermissions": [
         "licenses.licenses.collection.get",
@@ -322,6 +347,21 @@
         "licenses.agreements.linkedLicenses.get",
         "licenses.compareTerms"
       ]
+    },
+    {
+      "permissionName": "licenses.licenses.item.post",
+      "displayName": "Licenses item post",
+      "description": "Post an license record"
+    },
+    {
+      "permissionName": "licenses.licenses.item.put",
+      "displayName": "Licenses item put",
+      "description": "Put an license record"
+    },
+    {
+      "permissionName": "licenses.licenses.item.clone",
+      "displayName": "Licenses item clone",
+      "description": "Clone an license record"
     },
     {
       "permissionName": "licenses.licenses.edit",
@@ -333,6 +373,11 @@
       ]
     },
     {
+      "permissionName": "licenses.licenses.item.delete",
+      "displayName": "Licenses item delete",
+      "description": "Delete an license record"
+    },
+    {
       "permissionName": "licenses.licenses.manage",
       "subPermissions": [
         "licenses.licenses.edit",
@@ -340,11 +385,31 @@
       ]
     },
     {
+      "permissionName": "licenses.files.collection.get",
+      "displayName": "Licenses files collection get",
+      "description": "Get a collection of file records"
+    },
+    {
+      "permissionName": "licenses.files.item.get",
+      "displayName": "Licenses files item get",
+      "description": "Get a files record"
+    },
+    {
       "permissionName": "licenses.files.view",
       "subPermissions": [
         "licenses.files.collection.get",
         "licenses.files.item.get"
       ]
+    },
+    {
+      "permissionName": "licenses.files.item.post",
+      "displayName": "Licenses files item post",
+      "description": "Post a files record"
+    },
+    {
+      "permissionName": "licenses.files.item.put",
+      "displayName": "Licenses files item put",
+      "description": "Put a files record"
     },
     {
       "permissionName": "licenses.files.edit",
@@ -355,11 +420,26 @@
       ]
     },
     {
+      "permissionName": "licenses.files.item.delete",
+      "displayName": "Licenses files item delete",
+      "description": "Delete a files record"
+    },
+    {
       "permissionName": "licenses.files.manage",
       "subPermissions": [
         "licenses.files.edit",
         "licenses.files.item.delete"
       ]
+    },
+    {
+      "permissionName": "licenses.contacts.collection.get",
+      "displayName": "Licenses contacts collection get",
+      "description": "Get a collection of contact records"
+    },
+    {
+      "permissionName": "licenses.contacts.item.get",
+      "displayName": "Licenses contacts item get",
+      "description": "Get a contact record"
     },
     {
       "permissionName": "licenses.contacts.view",
@@ -369,6 +449,16 @@
       ]
     },
     {
+      "permissionName": "licenses.orgs.collection.get",
+      "displayName": "Licenses orgs collection get",
+      "description": "Get a collection of org records"
+    },
+    {
+      "permissionName": "licenses.orgs.item.get",
+      "displayName": "Licenses orgs item get",
+      "description": "Get an org record"
+    },
+    {
       "permissionName": "licenses.orgs.view",
       "subPermissions": [
         "licenses.orgs.collection.get",
@@ -376,11 +466,31 @@
       ]
     },
     {
+      "permissionName": "licenses.refdata.collection.get",
+      "displayName": "Licenses refdata collection get",
+      "description": "Get a collection of refdata records"
+    },
+    {
+      "permissionName": "licenses.refdata.item.get",
+      "displayName": "Licenses refdata item get",
+      "description": "Get a refdata record"
+    },
+    {
       "permissionName": "licenses.refdata.view",
       "subPermissions": [
         "licenses.refdata.collection.get",
         "licenses.refdata.item.get"
       ]
+    },
+    {
+      "permissionName": "licenses.refdata.item.post",
+      "displayName": "Licenses refdata item post",
+      "description": "Post a refdata record"
+    },
+    {
+      "permissionName": "licenses.refdata.item.put",
+      "displayName": "Licenses refdata item put",
+      "description": "Put a refdata record"
     },
     {
       "permissionName": "licenses.refdata.edit",
@@ -391,6 +501,11 @@
       ]
     },
     {
+      "permissionName": "licenses.refdata.item.delete",
+      "displayName": "Licenses refdata item delete",
+      "description": "Delete a refdata record"
+    },
+    {
       "permissionName": "licenses.refdata.manage",
       "subPermissions": [
         "licenses.refdata.edit",
@@ -398,11 +513,14 @@
       ]
     },
     {
-      "permissionName": "licenses.contacts.view",
-      "subPermissions": [
-        "licenses.contacts.collection.get",
-        "licenses.contacts.item.get"
-      ]
+      "permissionName": "licenses.licenseLinks.collection.get",
+      "displayName": "Licenses license links collection get",
+      "description": "Get a collection of license link records"
+    },
+    {
+      "permissionName": "licenses.licenseLinks.item.get",
+      "displayName": "Licenses license links item get",
+      "description": "Get a license link record"
     },
     {
       "permissionName": "licenses.licenseLinks.view",
@@ -412,11 +530,41 @@
       ]
     },
     {
+      "permissionName": "licenses.licenseLinks.collection.get",
+      "displayName": "Licenses license links collection get",
+      "description": "Get a collection of license link records"
+    },
+    {
+      "permissionName": "licenses.licenseLinks.item.get",
+      "displayName": "Licenses license links item get",
+      "description": "Get a license link record"
+    },
+    {
+      "permissionName": "licenses.custprops.collection.get",
+      "displayName": "Licenses custom properties links collection get",
+      "description": "Get a collection of custom property records"
+    },
+    {
+      "permissionName": "licenses.custprops.item.get",
+      "displayName": "Licenses custom properties item get",
+      "description": "Get a custom property record"
+    },
+    {
       "permissionName": "licenses.custprops.view",
       "subPermissions": [
         "licenses.custprops.collection.get",
         "licenses.custprops.item.get"
       ]
+    },
+    {
+      "permissionName": "licenses.custprops.item.post",
+      "displayName": "Licenses custom properties item post",
+      "description": "Post a custom property record"
+    },
+    {
+      "permissionName": "licenses.custprops.item.put",
+      "displayName": "Licenses custom properties item put",
+      "description": "Put a custom property record"
     },
     {
       "permissionName": "licenses.custprops.edit",
@@ -425,6 +573,11 @@
         "licenses.custprops.item.post",
         "licenses.custprops.item.put"
       ]
+    },
+    {
+      "permissionName": "licenses.custprops.item.delete",
+      "displayName": "Licenses custom properties item delete",
+      "description": "Delete a custom property record"
     },
     {
       "permissionName": "licenses.custprops.manage",

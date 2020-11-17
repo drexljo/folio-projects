@@ -1,0 +1,5 @@
+[Unit]
+Description=FOLIO mod-source-record-storage target
+
+[Install]
+WantedBy=multi-user.target

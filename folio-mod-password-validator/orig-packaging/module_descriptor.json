@@ -1,5 +1,5 @@
 {
-  "id": "mod-password-validator-1.8.0-SNAPSHOT",
+  "id": "mod-password-validator-1.8.3-SNAPSHOT",
   "name": "Password Validator Module",
   "provides": [
     {

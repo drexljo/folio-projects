@@ -1,8 +1,15 @@
 [Unit]
 Description=FOLIO mod-erm-usage-harvester service
-Wants=postgresql.service folio-okapi.service
-After=network-online.target postgresql.service folio-okapi.service
+PartOf=folio-mod-erm-usage-harvester.target
+After=folio-okapi.target
+After=network-online.target
+After=postgres.service
 Requires=network-online.target
+Wants=folio-okapi.target
+Wants=postgres.service
+# Folio module dependencies
+After=folio-mod-erm-usage.target
+Wants=folio-mod-erm-usage.target
 
 [Service]
 Type=exec
@@ -12,10 +19,11 @@ EnvironmentFile=/etc/folio/mod-erm-usage-harvester/module.env
 Environment=PORT="%i"
 User=folio-mod-erm-usage-harvester
 Group=folio-mod-erm-usage-harvester
+SyslogIdentifier=folio-modeusharv
 
 # Starting routines
 ExecStartPre=+/usr/share/folio/libmods/bin/board on
-ExecStart=/bin/sh -c "/usr/bin/java -Dport=$PORT $JAVA_OPTIONS \
+ExecStart=/bin/sh -c "/usr/bin/java -Dhttp.port=$PORT $JAVA_OPTIONS \
           -jar /usr/share/folio/mod-erm-usage-harvester/lib/mod-erm-usage-harvester-bundle-fat.jar"
 ExecStartPost=/usr/share/folio/libmods/bin/call_tower signon
 
@@ -49,5 +57,4 @@ StartLimitInterval=60
 PrivateTmp=true
 
 [Install]
-WantedBy=multi-user.target
-WantedBy=folio-okapi.service
+WantedBy=folio-mod-erm-usage-harvester.target

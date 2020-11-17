@@ -3,6 +3,9 @@ set -e
 
 # Set module name
 FM_MODULE="mod-data-import-converter-storage"
+# BEWARE: name length for this module breaks native user/group names.
+# Thus we need to short it down
+FM_NAMES="mod-data-import-cs"
 
 if [ "$1" = "purge" ]
   then
@@ -26,7 +29,7 @@ if [ "$1" = "purge" ]
     [ -d /var/lib/folio ] \
       && rmdir --ignore-fail-on-non-empty /var/lib/folio
     # Delete user if home directoy is nonexisting
-    deluser folio-$FM_MODULE || true
+    deluser folio-$FM_NAMES || true
 fi
 
 #DEBHELPER#

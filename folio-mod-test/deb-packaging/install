@@ -1,3 +1,4 @@
 etc/folio/mod-test/module.env etc/folio/mod-test
 lib/systemd/system/folio-mod-test@.service lib/systemd/system
+lib/systemd/system/folio-mod-test.target lib/systemd/system
 usr/share/folio/mod-test usr/share/folio

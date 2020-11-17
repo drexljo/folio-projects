@@ -1,0 +1,5 @@
+[Unit]
+Description=FOLIO mod-quick-marc target
+
+[Install]
+WantedBy=multi-user.target

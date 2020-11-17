@@ -1,5 +1,5 @@
 {
-  "id": "mod-data-export-2.2.0-SNAPSHOT",
+  "id": "mod-data-export-3.1.0-SNAPSHOT",
   "name": "Data Export Module",
   "requires": [
     {
@@ -8,19 +8,19 @@
     },
     {
       "id": "users",
-      "version": "15.1"
+      "version": "15.2"
     },
     {
       "id": "instance-storage",
-      "version": "7.4"
+      "version": "7.5"
     },
     {
       "id": "holdings-storage",
-      "version": "4.2"
+      "version": "4.4"
     },
     {
       "id": "item-storage",
-      "version": "8.4"
+      "version": "8.6"
     },
     {
       "id": "nature-of-content-terms",
@@ -77,6 +77,10 @@
     {
       "id": "call-number-types",
       "version": "1.0"
+    },
+    {
+      "id": "instance-bulk",
+      "version": "0.1"
     }
   ],
   "provides": [
@@ -144,7 +148,9 @@
           "permissionsRequired": [
             "data-export.file-definitions.upload.post"
           ],
-          "modulePermissions": []
+          "modulePermissions": [
+            "inventory-storage.instance-bulk.ids.get"
+          ]
         },
         {
           "methods": [
@@ -153,6 +159,16 @@
           "pathPattern": "/data-export/job-executions",
           "permissionsRequired": [
             "data-export.job-executions.items.get"
+          ],
+          "modulePermissions": []
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/data-export/job-executions/{id}",
+          "permissionsRequired": [
+            "data-export.job-executions.item.delete"
           ],
           "modulePermissions": []
         },
@@ -300,6 +316,16 @@
             "data-export.expire-jobs.post"
           ],
           "modulePermissions": []
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/data-export/logs",
+          "permissionsRequired": [
+            "data-export.logs.collection.get"
+          ],
+          "modulePermissions": []
         }
       ]
     },
@@ -354,6 +380,11 @@
       "permissionName": "data-export.job-executions.collection.get",
       "displayName": "Data Export - get job execution collection by query",
       "description": "Entry point to get Job Executions by query"
+    },
+    {
+      "permissionName": "data-export.job-executions.item.delete",
+      "displayName": "Data Export - delete job execution by Id",
+      "description": "Permission to delete Job Executions by Id"
     },
     {
       "permissionName": "data-export.file-definitions.upload.post",
@@ -431,6 +462,11 @@
       "description": "Entry point to stop freezing job executions"
     },
     {
+      "permissionName": "data-export.logs.collection.get",
+      "displayName": "Data Export - get error logs collection",
+      "description": "Entry point to get error logs by job execution id"
+    },
+    {
       "permissionName": "data-export.all",
       "displayName": "Data Export - all permissions",
       "description": "Entire set of permissions needed to use the Data Export",
@@ -440,6 +476,7 @@
         "data-export.file-definitions.item.post",
         "data-export.file-definitions.upload.post",
         "data-export.job-executions.items.get",
+        "data-export.job-executions.item.delete",
         "data-export.job-executions.items.download.get",
         "data-export.job-profiles.item.post",
         "data-export.job-profiles.collection.get",
@@ -452,7 +489,8 @@
         "data-export.mapping-profiles.item.put",
         "data-export.mapping-profiles.item.delete",
         "data-export.transformation-fields.collection.get",
-        "data-export.expire-jobs.post"
+        "data-export.expire-jobs.post",
+        "data-export.logs.collection.get"
       ],
       "visible": false
     }

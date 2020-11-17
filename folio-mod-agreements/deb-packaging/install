@@ -1,3 +1,4 @@
 etc/folio/mod-agreements/module.env etc/folio/mod-agreements
 lib/systemd/system/folio-mod-agreements@.service lib/systemd/system
+lib/systemd/system/folio-mod-agreements.target lib/systemd/system
 usr/share/folio/mod-agreements usr/share/folio

@@ -1,8 +1,21 @@
 [Unit]
 Description=FOLIO mod-ncip service
-Wants=postgresql.service folio-okapi.service
-After=network-online.target postgresql.service folio-okapi.service
+PartOf=folio-mod-ncip.target
+After=folio-okapi.target
+After=network-online.target
+After=postgres.service
 Requires=network-online.target
+Wants=folio-okapi.target
+Wants=postgres.service
+# Folio module dependencies
+After=folio-mod-circulation.target
+Wants=folio-mod-circulation.target
+After=folio-mod-configuration.target
+Wants=folio-mod-configuration.target
+After=folio-mod-inventory.target
+Wants=folio-mod-inventory.target
+After=folio-mod-inventory-storage.target
+Wants=folio-mod-inventory-storage.target
 
 [Service]
 Type=exec
@@ -12,6 +25,7 @@ EnvironmentFile=/etc/folio/mod-ncip/module.env
 Environment=PORT="%i"
 User=folio-mod-ncip
 Group=folio-mod-ncip
+SyslogIdentifier=folio-modncip
 
 # Starting routines
 ExecStartPre=+/usr/share/folio/libmods/bin/board on
@@ -49,5 +63,4 @@ StartLimitInterval=60
 PrivateTmp=true
 
 [Install]
-WantedBy=multi-user.target
-WantedBy=folio-okapi.service
+WantedBy=folio-mod-ncip.target

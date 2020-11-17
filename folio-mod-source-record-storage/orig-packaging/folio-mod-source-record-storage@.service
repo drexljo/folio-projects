@@ -1,8 +1,15 @@
 [Unit]
 Description=FOLIO mod-source-record-storage service
-Wants=postgresql.service folio-okapi.service
-After=network-online.target postgresql.service folio-okapi.service
+PartOf=folio-mod-source-record-storage.target
+After=folio-okapi.target
+After=network-online.target
+After=postgres.service
 Requires=network-online.target
+Wants=folio-okapi.target
+Wants=postgres.service
+# Folio module dependencies
+After=folio-mod-pubsub.target
+Wants=folio-mod-pubsub.target
 
 [Service]
 Type=exec
@@ -12,11 +19,12 @@ EnvironmentFile=/etc/folio/mod-source-record-storage/module.env
 Environment=PORT="%i"
 User=folio-mod-source-record-storage
 Group=folio-mod-source-record-storage
+SyslogIdentifier=folio-modsource
 
 # Starting routines
 ExecStartPre=+/usr/share/folio/libmods/bin/board on
-ExecStart=/bin/sh -c "/usr/bin/java -Dport=$PORT $JAVA_OPTIONS \
-          -jar /usr/share/folio/mod-source-record-storage/lib/mod-source-record-storage-fat.jar"
+ExecStart=/bin/sh -c "/usr/bin/java -Dhttp.port=$PORT $JAVA_OPTIONS \
+          -jar /usr/share/folio/mod-source-record-storage/lib/mod-source-record-storage-server-fat.jar"
 ExecStartPost=/usr/share/folio/libmods/bin/call_tower signon
 
 # Stopping routines
@@ -49,5 +57,4 @@ StartLimitInterval=60
 PrivateTmp=true
 
 [Install]
-WantedBy=multi-user.target
-WantedBy=folio-okapi.service
+WantedBy=folio-mod-source-record-storage.target

@@ -1,5 +1,5 @@
 {
-  "id": "mod-feesfines-15.9.0-SNAPSHOT",
+  "id": "mod-feesfines-15.10.0-SNAPSHOT",
   "name": "feesfines",
   "requires": [
     {
@@ -54,7 +54,7 @@
   "provides": [
     {
       "id": "feesfines",
-      "version": "15.4",
+      "version": "16.1",
       "handlers": [
         {
           "methods": [
@@ -303,6 +303,107 @@
         },
         {
           "methods": [
+            "POST"
+          ],
+          "pathPattern": "/accounts-bulk/check-pay",
+          "permissionsRequired": [
+            "accounts.check-pay.post"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/accounts-bulk/check-transfer",
+          "permissionsRequired": [
+            "accounts.check-transfer.post"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/accounts-bulk/check-refund",
+          "permissionsRequired": [
+            "accounts.check-refund.post"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/accounts-bulk/check-waive",
+          "permissionsRequired": [
+            "accounts.check-waive.post"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/accounts-bulk/pay",
+          "permissionsRequired": [
+            "accounts.pay.post"
+          ],
+          "modulePermissions": [
+            "pubsub.publish.post",
+            "modperms.feesfines.patron-notices.post"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/accounts-bulk/waive",
+          "permissionsRequired": [
+            "accounts.waive.post"
+          ],
+          "modulePermissions": [
+            "pubsub.publish.post",
+            "modperms.feesfines.patron-notices.post"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/accounts-bulk/transfer",
+          "permissionsRequired": [
+            "accounts.transfer.post"
+          ],
+          "modulePermissions": [
+            "pubsub.publish.post",
+            "modperms.feesfines.patron-notices.post"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/accounts-bulk/cancel",
+          "permissionsRequired": [
+            "accounts.cancel.post"
+          ],
+          "modulePermissions": [
+            "pubsub.publish.post",
+            "modperms.feesfines.patron-notices.post"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/accounts-bulk/refund",
+          "permissionsRequired": [
+            "accounts.refund.post"
+          ],
+          "modulePermissions": [
+            "pubsub.publish.post",
+            "modperms.feesfines.patron-notices.post"
+          ]
+        },
+        {
+          "methods": [
             "GET"
           ],
           "pathPattern": "/feefineactions",
@@ -328,7 +429,8 @@
             "feefineactions.item.post"
           ],
           "modulePermissions": [
-            "modperms.feesfines.patron-notices.post"
+            "modperms.feesfines.patron-notices.post",
+            "pubsub.publish.post"
           ]
         },
         {
@@ -644,6 +746,9 @@
           "pathPattern": "/manualblocks",
           "permissionsRequired": [
             "manualblocks.item.post"
+          ],
+          "modulePermissions": [
+            "pubsub.publish.post"
           ]
         },
         {
@@ -653,6 +758,9 @@
           "pathPattern": "/manualblocks/{id}",
           "permissionsRequired": [
             "manualblocks.item.put"
+          ],
+          "modulePermissions": [
+            "pubsub.publish.post"
           ]
         },
         {
@@ -662,6 +770,9 @@
           "pathPattern": "/manualblocks/{id}",
           "permissionsRequired": [
             "manualblocks.item.delete"
+          ],
+          "modulePermissions": [
+            "pubsub.publish.post"
           ]
         },
         {
@@ -752,6 +863,51 @@
           "pathPattern": "/lost-item-fees-policies/{id}",
           "permissionsRequired": [
             "lost-item-fees-policies.item.delete"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/manual-block-templates",
+          "permissionsRequired": [
+            "manual-block-templates.collection.get"
+          ]
+        },
+        {
+          "methods": [
+            "GET"
+          ],
+          "pathPattern": "/manual-block-templates/{id}",
+          "permissionsRequired": [
+            "manual-block-templates.item.get"
+          ]
+        },
+        {
+          "methods": [
+            "POST"
+          ],
+          "pathPattern": "/manual-block-templates",
+          "permissionsRequired": [
+            "manual-block-templates.item.post"
+          ]
+        },
+        {
+          "methods": [
+            "PUT"
+          ],
+          "pathPattern": "/manual-block-templates/{id}",
+          "permissionsRequired": [
+            "manual-block-templates.item.put"
+          ]
+        },
+        {
+          "methods": [
+            "DELETE"
+          ],
+          "pathPattern": "/manual-block-templates/{id}",
+          "permissionsRequired": [
+            "manual-block-templates.item.delete"
           ]
         }
       ]
@@ -1156,6 +1312,31 @@
       "permissionName": "lost-item-fees-policies.item.delete",
       "displayName": "Lost-item-fees-policies item delete",
       "description": "Delete an lost-item-fees-policies record"
+    },
+    {
+      "permissionName": "manual-block-templates.collection.get",
+      "displayName": "manual-block-template collection get",
+      "description": "Get a list of manual-block templates"
+    },
+    {
+      "permissionName": "manual-block-templates.item.get",
+      "displayName": "manual-block-template item get",
+      "description": "Get a single manual-block template"
+    },
+    {
+      "permissionName": "manual-block-templates.item.post",
+      "displayName": "manual-block-template item post",
+      "description": "Create a new manual-block template"
+    },
+    {
+      "permissionName": "manual-block-templates.item.put",
+      "displayName": "manual-block-template item put",
+      "description": "Edit an manual-block template"
+    },
+    {
+      "permissionName": "manual-block-templates.item.delete",
+      "displayName": "manual-block-template item delete",
+      "description": "Delete an manual-block template"
     },
     {
       "permissionName": "modperms.feesfines.patron-notices.post",

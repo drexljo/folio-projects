@@ -1,8 +1,25 @@
 [Unit]
 Description=FOLIO mod-source-record-manager service
-Wants=postgresql.service folio-okapi.service
-After=network-online.target postgresql.service folio-okapi.service
+PartOf=folio-mod-source-record-manager.target
+After=folio-okapi.target
+After=network-online.target
+After=postgres.service
 Requires=network-online.target
+Wants=folio-okapi.target
+Wants=postgres.service
+# Folio module dependencies
+After=folio-mod-data-import-converter-storage.target
+Wants=folio-mod-data-import-converter-storage.target
+After=folio-mod-inventory.target
+Wants=folio-mod-inventory.target
+After=folio-mod-inventory-storage.target
+Wants=folio-mod-inventory-storage.target
+After=folio-mod-pubsub.target
+Wants=folio-mod-pubsub.target
+After=folio-mod-source-record-storage.target
+Wants=folio-mod-source-record-storage.target
+After=folio-mod-users.target
+Wants=folio-mod-users.target
 
 [Service]
 Type=exec
@@ -12,11 +29,12 @@ EnvironmentFile=/etc/folio/mod-source-record-manager/module.env
 Environment=PORT="%i"
 User=folio-mod-source-record-manager
 Group=folio-mod-source-record-manager
+SyslogIdentifier=folio-modsourman
 
 # Starting routines
 ExecStartPre=+/usr/share/folio/libmods/bin/board on
-ExecStart=/bin/sh -c "/usr/bin/java -Dport=$PORT $JAVA_OPTIONS \
-          -jar /usr/share/folio/mod-source-record-manager/lib/mod-source-record-manager-fat.jar"
+ExecStart=/bin/sh -c "/usr/bin/java -Dhttp.port=$PORT $JAVA_OPTIONS \
+          -jar /usr/share/folio/mod-source-record-manager/lib/mod-source-record-manager-server-fat.jar"
 ExecStartPost=/usr/share/folio/libmods/bin/call_tower signon
 
 # Stopping routines
@@ -49,5 +67,4 @@ StartLimitInterval=60
 PrivateTmp=true
 
 [Install]
-WantedBy=multi-user.target
-WantedBy=folio-okapi.service
+WantedBy=folio-mod-source-record-manager.target

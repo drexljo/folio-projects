@@ -82,7 +82,7 @@ Please fix this and reinstall this package." >&2
         fi
     fi
     # Ask for ports and setup services, if necessary
-    if ! ls -1 /etc/systemd/system/multi-user.target.wants/folio-$FM_MODULE@* > /dev/null 2>&1
+    if ! ls -1 /etc/systemd/system/folio-$FM_MODULE.target.wants/folio-$FM_MODULE@* > /dev/null 2>&1
       then
         # only execute if script exists, which should be cared for by the
         # package management installing folio-libmods

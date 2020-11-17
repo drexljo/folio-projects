@@ -1,5 +1,5 @@
 {
-  "id": "mod-organizations-storage-3.2.0-SNAPSHOT",
+  "id": "mod-organizations-storage-3.3.0-SNAPSHOT",
   "name": "Organizations CRUD module",
   "provides": [
     {
@@ -397,7 +397,7 @@
     },
     {
       "id": "organizations-storage.organizations",
-      "version": "3.1",
+      "version": "3.2",
       "handlers": [
         {
           "methods": [

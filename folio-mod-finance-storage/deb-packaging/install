@@ -1,3 +1,4 @@
 etc/folio/mod-finance-storage/module.env etc/folio/mod-finance-storage
 lib/systemd/system/folio-mod-finance-storage@.service lib/systemd/system
+lib/systemd/system/folio-mod-finance-storage.target lib/systemd/system
 usr/share/folio/mod-finance-storage usr/share/folio

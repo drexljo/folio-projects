@@ -1,8 +1,33 @@
 [Unit]
 Description=FOLIO mod-circulation service
-Wants=postgresql.service folio-okapi.service
-After=network-online.target postgresql.service folio-okapi.service
+PartOf=folio-mod-circulation.target
+After=folio-okapi.target
+After=network-online.target
+After=postgres.service
 Requires=network-online.target
+Wants=folio-okapi.target
+Wants=postgres.service
+# Folio module dependencies
+After=folio-mod-calendar.target
+Wants=folio-mod-calendar.target
+After=folio-mod-circulation-storage.target
+Wants=folio-mod-circulation-storage.target
+After=folio-mod-configuration.target
+Wants=folio-mod-configuration.target
+After=folio-mod-feesfines.target
+Wants=folio-mod-feesfines.target
+After=folio-mod-inventory-storage.target
+Wants=folio-mod-inventory-storage.target
+After=folio-mod-notes.target
+Wants=folio-mod-notes.target
+After=folio-mod-notify.target
+Wants=folio-mod-notify.target
+After=folio-mod-patron-blocks.target
+Wants=folio-mod-patron-blocks.target
+After=folio-mod-pubsub.target
+Wants=folio-mod-pubsub.target
+After=folio-mod-users.target
+Wants=folio-mod-users.target
 
 [Service]
 Type=exec
@@ -12,6 +37,7 @@ EnvironmentFile=/etc/folio/mod-circulation/module.env
 Environment=PORT="%i"
 User=folio-mod-circulation
 Group=folio-mod-circulation
+SyslogIdentifier=folio-circ
 
 # Starting routines
 ExecStartPre=+/usr/share/folio/libmods/bin/board on
@@ -49,5 +75,4 @@ StartLimitInterval=60
 PrivateTmp=true
 
 [Install]
-WantedBy=multi-user.target
-WantedBy=folio-okapi.service
+WantedBy=folio-mod-circulation.target

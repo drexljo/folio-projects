@@ -8,7 +8,7 @@ Homepage: https://github.com/folio-org/okapi
 
 Package: folio-okapi
 Architecture: all
-Depends: ${misc:Depends}, ${misc:Pre-Depends}, ${shlibs:Depends}, adduser (>= 3.113~), curl, openjdk-8-jre | openjdk-8-jdk | openjdk-11-jre | openjdk-11-jdk, postgresql-client, whiptail (>= 0.52.18~), bash (>= 4.3~)
+Depends: ${misc:Depends}, ${misc:Pre-Depends}, ${shlibs:Depends}, adduser (>= 3.113~), curl, openjdk-11-jre | openjdk-11-jdk, postgresql-client, whiptail (>= 0.52.18~), bash (>= 4.3~)
 Suggests: postgresql
 Description: FOLIO message broker
  Okapi is the central message broker between all modules of FOLIO. It needs a 

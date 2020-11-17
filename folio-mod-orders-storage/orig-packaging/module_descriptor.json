@@ -1,5 +1,5 @@
 {
-  "id": "mod-orders-storage-11.1.0-SNAPSHOT",
+  "id": "mod-orders-storage-11.2.0-SNAPSHOT",
   "name": "Orders CRUD module",
   "provides": [
     {
@@ -157,7 +157,7 @@
     },
     {
       "id": "orders-storage.po-lines",
-      "version": "9.3",
+      "version": "9.4",
       "handlers": [
         {
           "methods": [
@@ -217,7 +217,7 @@
     },
     {
       "id": "orders-storage.purchase-orders",
-      "version": "7.1",
+      "version": "7.2",
       "handlers": [
         {
           "methods": [

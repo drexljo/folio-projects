@@ -1,8 +1,23 @@
 [Unit]
 Description=FOLIO mod-patron service
-Wants=postgresql.service folio-okapi.service
-After=network-online.target postgresql.service folio-okapi.service
+PartOf=folio-mod-patron.target
+After=folio-okapi.target
+After=network-online.target
+After=postgres.service
 Requires=network-online.target
+Wants=folio-okapi.target
+Wants=postgres.service
+# Folio module dependencies
+After=folio-mod-circulation.target
+Wants=folio-mod-circulation.target
+After=folio-mod-feesfines.target
+Wants=folio-mod-feesfines.target
+After=folio-mod-inventory.target
+Wants=folio-mod-inventory.target
+After=folio-mod-inventory-storage.target
+Wants=folio-mod-inventory-storage.target
+After=folio-mod-users.target
+Wants=folio-mod-users.target
 
 [Service]
 Type=exec
@@ -12,10 +27,11 @@ EnvironmentFile=/etc/folio/mod-patron/module.env
 Environment=PORT="%i"
 User=folio-mod-patron
 Group=folio-mod-patron
+SyslogIdentifier=folio-modpatron
 
 # Starting routines
 ExecStartPre=+/usr/share/folio/libmods/bin/board on
-ExecStart=/bin/sh -c "/usr/bin/java -Dport=$PORT $JAVA_OPTIONS \
+ExecStart=/bin/sh -c "/usr/bin/java -Dhttp.port=$PORT $JAVA_OPTIONS \
           -jar /usr/share/folio/mod-patron/lib/mod-patron-fat.jar"
 ExecStartPost=/usr/share/folio/libmods/bin/call_tower signon
 
@@ -49,5 +65,4 @@ StartLimitInterval=60
 PrivateTmp=true
 
 [Install]
-WantedBy=multi-user.target
-WantedBy=folio-okapi.service
+WantedBy=folio-mod-patron.target

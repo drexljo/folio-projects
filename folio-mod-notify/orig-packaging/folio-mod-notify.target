@@ -1,0 +1,5 @@
+[Unit]
+Description=FOLIO mod-notify target
+
+[Install]
+WantedBy=multi-user.target

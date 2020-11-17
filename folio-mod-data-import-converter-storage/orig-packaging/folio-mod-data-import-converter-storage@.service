@@ -1,8 +1,12 @@
 [Unit]
 Description=FOLIO mod-data-import-converter-storage service
-Wants=postgresql.service folio-okapi.service
-After=network-online.target postgresql.service folio-okapi.service
+PartOf=folio-mod-data-import-converter-storage.target
+After=folio-okapi.target
+After=network-online.target
+After=postgres.service
 Requires=network-online.target
+Wants=folio-okapi.target
+Wants=postgres.service
 
 [Service]
 Type=exec
@@ -10,12 +14,13 @@ EnvironmentFile=/etc/folio/mod-data-import-converter-storage/dbcredentials.env
 EnvironmentFile=/etc/folio/mod-data-import-converter-storage/okapi_connect.env
 EnvironmentFile=/etc/folio/mod-data-import-converter-storage/module.env
 Environment=PORT="%i"
-User=folio-mod-data-import-converter-storage
-Group=folio-mod-data-import-converter-storage
+User=folio-mod-data-import-cs
+Group=folio-mod-data-import-cs
+SyslogIdentifier=folio-moddiconv
 
 # Starting routines
 ExecStartPre=+/usr/share/folio/libmods/bin/board on
-ExecStart=/bin/sh -c "/usr/bin/java -Dport=$PORT $JAVA_OPTIONS \
+ExecStart=/bin/sh -c "/usr/bin/java -Dhttp.port=$PORT $JAVA_OPTIONS \
           -jar /usr/share/folio/mod-data-import-converter-storage/lib/mod-data-import-converter-storage-server-fat.jar"
 ExecStartPost=/usr/share/folio/libmods/bin/call_tower signon
 
@@ -49,5 +54,4 @@ StartLimitInterval=60
 PrivateTmp=true
 
 [Install]
-WantedBy=multi-user.target
-WantedBy=folio-okapi.service
+WantedBy=folio-mod-data-import-converter-storage.target

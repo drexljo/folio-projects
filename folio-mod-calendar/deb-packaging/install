@@ -1,3 +1,4 @@
 etc/folio/mod-calendar/module.env etc/folio/mod-calendar
 lib/systemd/system/folio-mod-calendar@.service lib/systemd/system
+lib/systemd/system/folio-mod-calendar.target lib/systemd/system
 usr/share/folio/mod-calendar usr/share/folio

@@ -1,8 +1,15 @@
 [Unit]
 Description=FOLIO mod-courses service
-Wants=postgresql.service folio-okapi.service
-After=network-online.target postgresql.service folio-okapi.service
+PartOf=folio-mod-courses.target
+After=folio-okapi.target
+After=network-online.target
+After=postgres.service
 Requires=network-online.target
+Wants=folio-okapi.target
+Wants=postgres.service
+# Folio module dependencies
+After=folio-mod-inventory-storage.target
+Wants=folio-mod-inventory-storage.target
 
 [Service]
 Type=exec
@@ -12,10 +19,11 @@ EnvironmentFile=/etc/folio/mod-courses/module.env
 Environment=PORT="%i"
 User=folio-mod-courses
 Group=folio-mod-courses
+SyslogIdentifier=folio-modcr
 
 # Starting routines
 ExecStartPre=+/usr/share/folio/libmods/bin/board on
-ExecStart=/bin/sh -c "/usr/bin/java -Dport=$PORT $JAVA_OPTIONS \
+ExecStart=/bin/sh -c "/usr/bin/java -Dhttp.port=$PORT $JAVA_OPTIONS \
           -jar /usr/share/folio/mod-courses/lib/mod-courses-fat.jar"
 ExecStartPost=/usr/share/folio/libmods/bin/call_tower signon
 
@@ -49,5 +57,4 @@ StartLimitInterval=60
 PrivateTmp=true
 
 [Install]
-WantedBy=multi-user.target
-WantedBy=folio-okapi.service
+WantedBy=folio-mod-courses.target

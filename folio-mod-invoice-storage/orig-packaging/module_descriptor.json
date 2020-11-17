@@ -1,5 +1,5 @@
 {
-  "id": "mod-invoice-storage-4.1.0-SNAPSHOT",
+  "id": "mod-invoice-storage-4.2.0-SNAPSHOT",
   "name": "Invoice CRUD module",
   "provides": [
     {

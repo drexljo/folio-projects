@@ -1,3 +1,4 @@
 etc/folio/mod-source-record-manager/module.env etc/folio/mod-source-record-manager
 lib/systemd/system/folio-mod-source-record-manager@.service lib/systemd/system
+lib/systemd/system/folio-mod-source-record-manager.target lib/systemd/system
 usr/share/folio/mod-source-record-manager usr/share/folio

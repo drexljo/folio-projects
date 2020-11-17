@@ -1,0 +1,5 @@
+[Unit]
+Description=FOLIO mod-inventory-storage target
+
+[Install]
+WantedBy=multi-user.target

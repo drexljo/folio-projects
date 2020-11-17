@@ -1,5 +1,5 @@
 {
-  "id": "mod-erm-usage-harvester-2.0.0-SNAPSHOT",
+  "id": "mod-erm-usage-harvester-2.1.0-SNAPSHOT",
   "name": "erm-usage-harvester",
   "provides": [
     {

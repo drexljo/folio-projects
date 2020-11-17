@@ -24,21 +24,24 @@ FM_MODULE="mod-data-import-converter-storage"
 case "$1" in
   configure)
     # Make sure the user exists
-    if ! getent passwd folio-$FM_MODULE > /dev/null
+    # BEWARE: name length for this module breaks native user/group names.
+    # Thus we need to short it down
+    FM_NAMES="mod-data-import-cs"
+    if ! getent passwd folio-mod-data-import-cs > /dev/null
       then
         adduser --system --quiet --home /var/lib/folio/$FM_MODULE \
           --no-create-home --shell /bin/false --group \
-          --gecos "FOLIO $FM_MODULE user" folio-$FM_MODULE
+          --gecos "FOLIO $FM_MODULE user" folio-$FM_NAMES
     fi
     
     # Check validity of user and group
-    if [ "$(id -u folio-$FM_MODULE)" = "0" ]
+    if [ "$(id -u folio-$FM_NAMES)" = "0" ]
       then
         echo "The FOLIO $FM_MODULE user must not have uid 0 (root).
 Please fix this and reinstall this package." >&2
         exit 1
     fi
-    if [ "$(id -g folio-$FM_MODULE)" = "0" ]
+    if [ "$(id -g folio-$FM_NAMES)" = "0" ]
       then
         echo "The FOLIO $FM_MODULE user must not have root as primary group.
 Please fix this and reinstall this package." >&2
@@ -47,7 +50,7 @@ Please fix this and reinstall this package." >&2
 
     # Create home directory if neccessary 
     mkdir -p /var/lib/folio/$FM_MODULE
-    chown folio-$FM_MODULE:folio-$FM_MODULE /var/lib/folio/$FM_MODULE
+    chown folio-$FM_NAMES:folio-$FM_NAMES /var/lib/folio/$FM_MODULE
 
     # Setup database if necessary
     if [ ! -f /etc/folio/$FM_MODULE/dbcredentials.env ]
@@ -82,7 +85,7 @@ Please fix this and reinstall this package." >&2
         fi
     fi
     # Ask for ports and setup services, if necessary
-    if ! ls -1 /etc/systemd/system/multi-user.target.wants/folio-$FM_MODULE@* > /dev/null 2>&1
+    if ! ls -1 /etc/systemd/system/folio-$FM_MODULE.target.wants/folio-$FM_MODULE@* > /dev/null 2>&1
       then
         # only execute if script exists, which should be cared for by the
         # package management installing folio-libmods

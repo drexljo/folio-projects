@@ -1,5 +1,5 @@
 {
-  "id": "mod-template-engine-1.10.0-SNAPSHOT",
+  "id": "mod-template-engine-1.13.0-SNAPSHOT",
   "name": "Template engine module",
   "requires": [
     {

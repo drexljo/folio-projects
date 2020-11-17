@@ -1,0 +1,5 @@
+[Unit]
+Description=FOLIO mod-codex-inventory target
+
+[Install]
+WantedBy=multi-user.target

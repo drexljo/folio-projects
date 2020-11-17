@@ -1,5 +1,5 @@
 {
-  "id": "mod-data-import-converter-storage-1.9.0-SNAPSHOT",
+  "id": "mod-data-import-converter-storage-1.10.0-SNAPSHOT",
   "name": "Data Import Converter Storage",
   "requires": [],
   "provides": [
@@ -25,7 +25,7 @@
             "converter-storage.jobprofile.post"
           ],
           "modulePermissions": [
-            "users.item.get"
+            "users.collection.get"
           ]
         },
         {
@@ -46,7 +46,7 @@
             "converter-storage.jobprofile.put"
           ],
           "modulePermissions": [
-            "users.item.get"
+            "users.collection.get"
           ]
         },
         {
@@ -76,7 +76,7 @@
             "converter-storage.matchprofile.post"
           ],
           "modulePermissions": [
-            "users.item.get"
+            "users.collection.get"
           ]
         },
         {
@@ -97,7 +97,7 @@
             "converter-storage.matchprofile.put"
           ],
           "modulePermissions": [
-            "users.item.get"
+            "users.collection.get"
           ]
         },
         {
@@ -127,7 +127,7 @@
             "converter-storage.actionprofile.post"
           ],
           "modulePermissions": [
-            "users.item.get"
+            "users.collection.get"
           ]
         },
         {
@@ -148,7 +148,7 @@
             "converter-storage.actionprofile.put"
           ],
           "modulePermissions": [
-            "users.item.get"
+            "users.collection.get"
           ]
         },
         {
@@ -178,7 +178,7 @@
             "converter-storage.mappingprofile.post"
           ],
           "modulePermissions": [
-            "users.item.get"
+            "users.collection.get"
           ]
         },
         {
@@ -199,7 +199,7 @@
             "converter-storage.mappingprofile.put"
           ],
           "modulePermissions": [
-            "users.item.get"
+            "users.collection.get"
           ]
         },
         {
