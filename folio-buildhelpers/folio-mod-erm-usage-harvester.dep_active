@@ -1,0 +1,8 @@
+After=folio-mod-erm-usage
+After=folio-okapi
+After=network-online.target
+After=postgres
+Requires=network-online.target
+Wants=folio-mod-erm-usage
+Wants=folio-okapi
+Wants=postgres

@@ -1,0 +1,6 @@
+WantedBy=folio-mod-gobi@.service
+WantedBy=folio-mod-inventory@.service
+WantedBy=folio-mod-invoice@.service
+WantedBy=folio-mod-orders@.service
+WantedBy=folio-okapi.service
+WantedBy=folio-okapi@.service

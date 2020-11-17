@@ -1,0 +1,5 @@
+WantedBy=folio-mod-circulation@.service
+WantedBy=folio-mod-feesfines@.service
+WantedBy=folio-mod-users-bl@.service
+WantedBy=folio-okapi.service
+WantedBy=folio-okapi@.service

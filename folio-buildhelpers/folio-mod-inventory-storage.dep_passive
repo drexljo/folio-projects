@@ -1,0 +1,17 @@
+WantedBy=folio-mod-circulation@.service
+WantedBy=folio-mod-codex-inventory@.service
+WantedBy=folio-mod-courses@.service
+WantedBy=folio-mod-data-export@.service
+WantedBy=folio-mod-feesfines@.service
+WantedBy=folio-mod-gobi@.service
+WantedBy=folio-mod-inventory@.service
+WantedBy=folio-mod-ncip@.service
+WantedBy=folio-mod-oai-pmh@.service
+WantedBy=folio-mod-orders@.service
+WantedBy=folio-mod-patron@.service
+WantedBy=folio-mod-rtac@.service
+WantedBy=folio-mod-source-record-manager@.service
+WantedBy=folio-mod-user-import@.service
+WantedBy=folio-mod-users-bl@.service
+WantedBy=folio-okapi.service
+WantedBy=folio-okapi@.service

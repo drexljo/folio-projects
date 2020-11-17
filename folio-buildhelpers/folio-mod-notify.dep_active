@@ -1,0 +1,16 @@
+After=folio-mod-event-config
+After=folio-mod-inventory-storage
+After=folio-mod-sender
+After=folio-mod-template-engine
+After=folio-mod-users
+After=folio-okapi
+After=network-online.target
+After=postgres
+Requires=network-online.target
+Wants=folio-mod-event-config
+Wants=folio-mod-inventory-storage
+Wants=folio-mod-sender
+Wants=folio-mod-template-engine
+Wants=folio-mod-users
+Wants=folio-okapi
+Wants=postgres

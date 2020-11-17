@@ -1,0 +1,10 @@
+After=folio-mod-configuration
+After=folio-mod-finance-storage
+After=folio-okapi
+After=network-online.target
+After=postgres
+Requires=network-online.target
+Wants=folio-mod-configuration
+Wants=folio-mod-finance-storage
+Wants=folio-okapi
+Wants=postgres

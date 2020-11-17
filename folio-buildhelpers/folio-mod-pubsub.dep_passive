@@ -1,0 +1,8 @@
+WantedBy=folio-mod-circulation@.service
+WantedBy=folio-mod-feesfines@.service
+WantedBy=folio-mod-inventory@.service
+WantedBy=folio-mod-patron-blocks@.service
+WantedBy=folio-mod-source-record-manager@.service
+WantedBy=folio-mod-source-record-storage@.service
+WantedBy=folio-okapi.service
+WantedBy=folio-okapi@.service

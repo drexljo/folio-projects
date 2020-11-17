@@ -1,0 +1,3 @@
+WantedBy=folio-mod-source-record-manager@.service
+WantedBy=folio-okapi.service
+WantedBy=folio-okapi@.service

@@ -1,0 +1,5 @@
+WantedBy=folio-mod-ncip@.service
+WantedBy=folio-mod-orders@.service
+WantedBy=folio-mod-patron@.service
+WantedBy=folio-okapi.service
+WantedBy=folio-okapi@.service

@@ -1,0 +1,7 @@
+WantedBy=folio-mod-feesfines@.service
+WantedBy=folio-mod-ncip@.service
+WantedBy=folio-mod-orders@.service
+WantedBy=folio-mod-patron@.service
+WantedBy=folio-mod-source-record-manager@.service
+WantedBy=folio-okapi.service
+WantedBy=folio-okapi@.service

@@ -1,0 +1,4 @@
+WantedBy=folio-mod-circulation@.service
+WantedBy=folio-mod-patron@.service
+WantedBy=folio-okapi.service
+WantedBy=folio-okapi@.service

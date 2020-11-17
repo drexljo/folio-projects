@@ -1,0 +1,6 @@
+After=folio-okapi
+After=network-online.target
+After=postgres
+Requires=network-online.target
+Wants=folio-okapi
+Wants=postgres

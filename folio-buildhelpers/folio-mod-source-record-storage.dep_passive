@@ -1,0 +1,6 @@
+WantedBy=folio-mod-data-export@.service
+WantedBy=folio-mod-inventory@.service
+WantedBy=folio-mod-oai-pmh@.service
+WantedBy=folio-mod-source-record-manager@.service
+WantedBy=folio-okapi.service
+WantedBy=folio-okapi@.service

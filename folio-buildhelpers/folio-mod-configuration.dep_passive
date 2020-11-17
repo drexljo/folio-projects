@@ -1,0 +1,15 @@
+WantedBy=folio-mod-circulation@.service
+WantedBy=folio-mod-codex-ekb@.service
+WantedBy=folio-mod-data-export@.service
+WantedBy=folio-mod-email@.service
+WantedBy=folio-mod-finance@.service
+WantedBy=folio-mod-gobi@.service
+WantedBy=folio-mod-invoice@.service
+WantedBy=folio-mod-ncip@.service
+WantedBy=folio-mod-notes@.service
+WantedBy=folio-mod-oai-pmh@.service
+WantedBy=folio-mod-orders@.service
+WantedBy=folio-mod-template-engine@.service
+WantedBy=folio-mod-users-bl@.service
+WantedBy=folio-okapi.service
+WantedBy=folio-okapi@.service

@@ -1,0 +1,4 @@
+WantedBy=folio-mod-data-import@.service
+WantedBy=folio-mod-quick-marc@.service
+WantedBy=folio-okapi.service
+WantedBy=folio-okapi@.service

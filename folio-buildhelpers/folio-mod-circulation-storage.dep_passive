@@ -1,0 +1,8 @@
+WantedBy=folio-mod-circulation@.service
+WantedBy=folio-mod-inventory@.service
+WantedBy=folio-mod-patron-blocks@.service
+WantedBy=folio-mod-rtac@.service
+WantedBy=folio-mod-template-engine@.service
+WantedBy=folio-mod-user-import@.service
+WantedBy=folio-okapi.service
+WantedBy=folio-okapi@.service

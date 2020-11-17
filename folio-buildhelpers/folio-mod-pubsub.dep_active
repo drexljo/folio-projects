@@ -1,0 +1,14 @@
+After=folio-mod-inventory-storage
+After=folio-mod-login
+After=folio-mod-permissions
+After=folio-mod-users
+After=folio-okapi
+After=network-online.target
+After=postgres
+Requires=network-online.target
+Wants=folio-mod-inventory-storage
+Wants=folio-mod-login
+Wants=folio-mod-permissions
+Wants=folio-mod-users
+Wants=folio-okapi
+Wants=postgres

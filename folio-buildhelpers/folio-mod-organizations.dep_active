@@ -1,0 +1,8 @@
+After=folio-mod-organizations-storage
+After=folio-okapi
+After=network-online.target
+After=postgres
+Requires=network-online.target
+Wants=folio-mod-organizations-storage
+Wants=folio-okapi
+Wants=postgres

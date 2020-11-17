@@ -1,0 +1,3 @@
+WantedBy=folio-mod-erm-usage-harvester@.service
+WantedBy=folio-okapi.service
+WantedBy=folio-okapi@.service

@@ -1,0 +1,12 @@
+After=folio-mod-configuration
+After=folio-mod-inventory-storage
+After=folio-mod-source-record-storage
+After=folio-okapi
+After=network-online.target
+After=postgres
+Requires=network-online.target
+Wants=folio-mod-configuration
+Wants=folio-mod-inventory-storage
+Wants=folio-mod-source-record-storage
+Wants=folio-okapi
+Wants=postgres

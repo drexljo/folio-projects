@@ -1,0 +1,8 @@
+After=folio-mod-source-record-manager
+After=folio-okapi
+After=network-online.target
+After=postgres
+Requires=network-online.target
+Wants=folio-mod-source-record-manager
+Wants=folio-okapi
+Wants=postgres
